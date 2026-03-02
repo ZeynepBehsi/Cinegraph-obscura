@@ -1,0 +1,5662 @@
+[
+  {
+    "id": 1394,
+    "title": "Nostalgia",
+    "year": 1983,
+    "runtime": 124,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Italy",
+      "Soviet Union"
+    ],
+    "studios": [
+      "Sovinfilm",
+      "Opera Film Produzione",
+      "RAI"
+    ]
+  },
+  {
+    "id": 1398,
+    "title": "Stalker",
+    "year": 1979,
+    "runtime": 162,
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "countries": [
+      "Soviet Union"
+    ],
+    "studios": [
+      "Mosfilm"
+    ]
+  },
+  {
+    "id": 593,
+    "title": "Solaris",
+    "year": 1972,
+    "runtime": 167,
+    "genres": [
+      "Drama",
+      "Science Fiction",
+      "Mystery"
+    ],
+    "countries": [
+      "Soviet Union"
+    ],
+    "studios": [
+      "Unit Four",
+      "Creative Unit of Writers & Cinema Workers",
+      "Mosfilm"
+    ]
+  },
+  {
+    "id": 895,
+    "title": "Andrei Rublev",
+    "year": 1966,
+    "runtime": 183,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "countries": [
+      "Soviet Union"
+    ],
+    "studios": [
+      "Mosfilm"
+    ]
+  },
+  {
+    "id": 24657,
+    "title": "The Sacrifice",
+    "year": 1986,
+    "runtime": 149,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden",
+      "France",
+      "United Kingdom"
+    ],
+    "studios": [
+      "Faragó Film",
+      "Svenska Filminstitutet"
+    ]
+  },
+  {
+    "id": 31442,
+    "title": "Ivan's Childhood",
+    "year": 1962,
+    "runtime": 95,
+    "genres": [
+      "Drama",
+      "War"
+    ],
+    "countries": [
+      "Soviet Union"
+    ],
+    "studios": [
+      "Tretye Tvorcheskoe Obyedinenie",
+      "Mosfilm"
+    ]
+  },
+  {
+    "id": 47011,
+    "title": "Voyage in Time",
+    "year": 1990,
+    "runtime": 62,
+    "genres": [
+      "Documentary"
+    ],
+    "countries": [
+      "Italy",
+      "Soviet Union"
+    ],
+    "studios": [
+      "GENIUS s.r.l.",
+      "RAI"
+    ]
+  },
+  {
+    "id": 1396,
+    "title": "Mirror",
+    "year": 1975,
+    "runtime": 107,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "countries": [
+      "Soviet Union"
+    ],
+    "studios": [
+      "Mosfilm"
+    ]
+  },
+  {
+    "id": 185,
+    "title": "A Clockwork Orange",
+    "year": 1971,
+    "runtime": 137,
+    "genres": [
+      "Science Fiction",
+      "Crime"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Hawk Films",
+      "Polaris Productions Limited"
+    ]
+  },
+  {
+    "id": 247,
+    "title": "The Killing",
+    "year": 1956,
+    "runtime": 85,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "United Artists",
+      "Harris-Kubrick Productions"
+    ]
+  },
+  {
+    "id": 345,
+    "title": "Eyes Wide Shut",
+    "year": 1999,
+    "runtime": 159,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Mystery"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Warner Bros. Pictures",
+      "Stanley Kubrick Productions",
+      "Pole Star",
+      "Hobby Films"
+    ]
+  },
+  {
+    "id": 967,
+    "title": "Spartacus",
+    "year": 1960,
+    "runtime": 197,
+    "genres": [
+      "History",
+      "War",
+      "Drama",
+      "Adventure"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Bryna Productions",
+      "Universal Pictures"
+    ]
+  },
+  {
+    "id": 975,
+    "title": "Paths of Glory",
+    "year": 1957,
+    "runtime": 88,
+    "genres": [
+      "War",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Bryna Productions",
+      "United Artists",
+      "Harris-Kubrick Productions"
+    ]
+  },
+  {
+    "id": 600,
+    "title": "Full Metal Jacket",
+    "year": 1987,
+    "runtime": 117,
+    "genres": [
+      "Drama",
+      "War"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Natant",
+      "Stanley Kubrick Productions",
+      "Warner Bros. Pictures"
+    ]
+  },
+  {
+    "id": 10056,
+    "title": "Killer's Kiss",
+    "year": 1955,
+    "runtime": 68,
+    "genres": [
+      "Thriller",
+      "Crime",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Minotaur Productions",
+      "United Artists"
+    ]
+  },
+  {
+    "id": 935,
+    "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+    "year": 1964,
+    "runtime": 95,
+    "genres": [
+      "Comedy",
+      "War"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Hawk Films",
+      "Columbia Pictures"
+    ]
+  },
+  {
+    "id": 10165,
+    "title": "Fear and Desire",
+    "year": 1953,
+    "runtime": 62,
+    "genres": [
+      "Drama",
+      "War",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Stanley Kubrick Productions"
+    ]
+  },
+  {
+    "id": 3175,
+    "title": "Barry Lyndon",
+    "year": 1975,
+    "runtime": 188,
+    "genres": [
+      "Drama",
+      "Romance",
+      "War",
+      "History"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Warner Bros. Pictures",
+      "Hawk Films",
+      "Peregrine"
+    ]
+  },
+  {
+    "id": 694,
+    "title": "The Shining",
+    "year": 1980,
+    "runtime": 144,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Warner Bros. Pictures",
+      "Peregrine",
+      "Hawk Films",
+      "The Producer Circle Co."
+    ]
+  },
+  {
+    "id": 62,
+    "title": "2001: A Space Odyssey",
+    "year": 1968,
+    "runtime": 149,
+    "genres": [
+      "Science Fiction",
+      "Mystery",
+      "Adventure"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Stanley Kubrick Productions",
+      "Metro-Goldwyn-Mayer"
+    ]
+  },
+  {
+    "id": 802,
+    "title": "Lolita",
+    "year": 1962,
+    "runtime": 154,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Seven Arts Productions",
+      "Harris Kubrick Pictures",
+      "A.A. Productions, Ltd.",
+      "Anya Pictures",
+      "Transworld Pictures"
+    ]
+  },
+  {
+    "id": 116,
+    "title": "Match Point",
+    "year": 2005,
+    "runtime": 124,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Thriller"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America",
+      "Luxembourg"
+    ],
+    "studios": [
+      "BBC Film",
+      "Thema Production",
+      "Jada Productions"
+    ]
+  },
+  {
+    "id": 512,
+    "title": "Scoop",
+    "year": 2006,
+    "runtime": 96,
+    "genres": [
+      "Comedy",
+      "Mystery"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "BBC Film",
+      "Ingenious Media",
+      "Phoenix Wiley Productions",
+      "Jelly Roll Productions"
+    ]
+  },
+  {
+    "id": 696,
+    "title": "Manhattan",
+    "year": 1979,
+    "runtime": 96,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "United Artists",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 703,
+    "title": "Annie Hall",
+    "year": 1977,
+    "runtime": 93,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Jack Rollins & Charles H. Joffe Productions",
+      "United Artists"
+    ]
+  },
+  {
+    "id": 2639,
+    "title": "Deconstructing Harry",
+    "year": 1997,
+    "runtime": 96,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Sweetland Films",
+      "Jean Doumanian Productions",
+      "Magnolia Productions"
+    ]
+  },
+  {
+    "id": 10739,
+    "title": "Anything Else",
+    "year": 2003,
+    "runtime": 108,
+    "genres": [
+      "Drama",
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "DreamWorks Pictures",
+      "VCL Communications",
+      "Gravier Productions",
+      "Perdido Productions"
+    ]
+  },
+  {
+    "id": 2779,
+    "title": "The Curse of the Jade Scorpion",
+    "year": 2001,
+    "runtime": 103,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America",
+      "Germany"
+    ],
+    "studios": [
+      "DreamWorks Pictures",
+      "VCL Communications",
+      "Gravier Productions"
+    ]
+  },
+  {
+    "id": 10440,
+    "title": "Manhattan Murder Mystery",
+    "year": 1993,
+    "runtime": 104,
+    "genres": [
+      "Comedy",
+      "Mystery"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "TriStar Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 10462,
+    "title": "Don't Drink the Water",
+    "year": 1994,
+    "runtime": 91,
+    "genres": [
+      "Comedy",
+      "TV Movie"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Jean Doumanian Productions",
+      "Magnolia Productions",
+      "Sweetland Films"
+    ]
+  },
+  {
+    "id": 10849,
+    "title": "The Purple Rose of Cairo",
+    "year": 1985,
+    "runtime": 82,
+    "genres": [
+      "Fantasy",
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Orion Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 10569,
+    "title": "Small Time Crooks",
+    "year": 2000,
+    "runtime": 94,
+    "genres": [
+      "Comedy",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Sweetland Films",
+      "Jean Doumanian Productions"
+    ]
+  },
+  {
+    "id": 4787,
+    "title": "Cassandra's Dream",
+    "year": 2007,
+    "runtime": 108,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "France",
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Iberville Productions",
+      "Wild Bunch",
+      "Virtual Films"
+    ]
+  },
+  {
+    "id": 21449,
+    "title": "What's Up, Tiger Lily?",
+    "year": 1966,
+    "runtime": 80,
+    "genres": [
+      "Action",
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America",
+      "Japan"
+    ],
+    "studios": [
+      "Benedict Pictures Corp.",
+      "American International Pictures",
+      "TOHO"
+    ]
+  },
+  {
+    "id": 11030,
+    "title": "Zelig",
+    "year": 1983,
+    "runtime": 79,
+    "genres": [
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Orion Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 11302,
+    "title": "Bananas",
+    "year": 1971,
+    "runtime": 82,
+    "genres": [
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Jack Rollins & Charles H. Joffe Productions",
+      "United Artists"
+    ]
+  },
+  {
+    "id": 5038,
+    "title": "Vicky Cristina Barcelona",
+    "year": 2008,
+    "runtime": 96,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Spain",
+      "United States of America"
+    ],
+    "studios": [
+      "Gravier Productions",
+      "Mediapro",
+      "Atresmedia",
+      "Dumaine Productions"
+    ]
+  },
+  {
+    "id": 11337,
+    "title": "Stardust Memories",
+    "year": 1980,
+    "runtime": 89,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Jack Rollins & Charles H. Joffe Productions",
+      "United Artists"
+    ]
+  },
+  {
+    "id": 5143,
+    "title": "Hannah and Her Sisters",
+    "year": 1986,
+    "runtime": 107,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Orion Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 30890,
+    "title": "Radio Days",
+    "year": 1987,
+    "runtime": 89,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Orion Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 11485,
+    "title": "Take the Money and Run",
+    "year": 1969,
+    "runtime": 85,
+    "genres": [
+      "Comedy",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Palomar Pictures International"
+    ]
+  },
+  {
+    "id": 11382,
+    "title": "Bullets Over Broadway",
+    "year": 1994,
+    "runtime": 98,
+    "genres": [
+      "Comedy",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Miramax",
+      "Jean Doumanian Productions",
+      "Sweetland Films"
+    ]
+  },
+  {
+    "id": 11562,
+    "title": "Crimes and Misdemeanors",
+    "year": 1989,
+    "runtime": 104,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Orion Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 11448,
+    "title": "Mighty Aphrodite",
+    "year": 1995,
+    "runtime": 95,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Miramax",
+      "Jean Doumanian Productions",
+      "Sweetland Films"
+    ]
+  },
+  {
+    "id": 22477,
+    "title": "September",
+    "year": 1987,
+    "runtime": 83,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Orion Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 22478,
+    "title": "Another Woman",
+    "year": 1988,
+    "runtime": 84,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Jack Rollins & Charles H. Joffe Productions",
+      "Orion Pictures"
+    ]
+  },
+  {
+    "id": 11561,
+    "title": "Sleeper",
+    "year": 1973,
+    "runtime": 87,
+    "genres": [
+      "Comedy",
+      "Science Fiction"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "United Artists",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 11624,
+    "title": "Everything You Always Wanted to Know About Sex *But Were Afraid to Ask",
+    "year": 1972,
+    "runtime": 88,
+    "genres": [
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "United Artists",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 8217,
+    "title": "Alice",
+    "year": 1990,
+    "runtime": 102,
+    "genres": [
+      "Fantasy",
+      "Drama",
+      "Romance",
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Orion Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 8288,
+    "title": "A Midsummer Night's Sex Comedy",
+    "year": 1982,
+    "runtime": 88,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Orion Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 11686,
+    "title": "Love and Death",
+    "year": 1975,
+    "runtime": 85,
+    "genres": [
+      "Comedy",
+      "History"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "United Artists",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 9684,
+    "title": "Sweet and Lowdown",
+    "year": 1999,
+    "runtime": 95,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Music"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Sweetland Films",
+      "Jean Doumanian Productions",
+      "Magnolia Productions"
+    ]
+  },
+  {
+    "id": 9688,
+    "title": "Melinda and Melinda",
+    "year": 2004,
+    "runtime": 100,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Fox Searchlight Pictures",
+      "Gravier Productions"
+    ]
+  },
+  {
+    "id": 9689,
+    "title": "Hollywood Ending",
+    "year": 2002,
+    "runtime": 112,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "DreamWorks Pictures",
+      "Gravier Productions",
+      "Capitol Films"
+    ]
+  },
+  {
+    "id": 12762,
+    "title": "Broadway Danny Rose",
+    "year": 1984,
+    "runtime": 84,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Orion Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 9716,
+    "title": "Everyone Says I Love You",
+    "year": 1996,
+    "runtime": 101,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Sweetland Films",
+      "Jean Doumanian Productions"
+    ]
+  },
+  {
+    "id": 9466,
+    "title": "Celebrity",
+    "year": 1998,
+    "runtime": 113,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Sweetland Films",
+      "Jean Doumanian Productions"
+    ]
+  },
+  {
+    "id": 28384,
+    "title": "Husbands and Wives",
+    "year": 1992,
+    "runtime": 108,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "TriStar Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 15867,
+    "title": "Interiors",
+    "year": 1978,
+    "runtime": 93,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "United Artists"
+    ]
+  },
+  {
+    "id": 38031,
+    "title": "You Will Meet a Tall Dark Stranger",
+    "year": 2010,
+    "runtime": 98,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Spain",
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Versátil Cinema",
+      "Gravier Productions",
+      "Atresmedia",
+      "Dippermouth",
+      "Mediapro"
+    ]
+  },
+  {
+    "id": 19200,
+    "title": "Shadows and Fog",
+    "year": 1991,
+    "runtime": 85,
+    "genres": [
+      "Comedy",
+      "Mystery",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Orion Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 19265,
+    "title": "Whatever Works",
+    "year": 2009,
+    "runtime": 92,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America",
+      "France"
+    ],
+    "studios": [
+      "Wild Bunch",
+      "Gravier Productions",
+      "Perdido Productions"
+    ]
+  },
+  {
+    "id": 81836,
+    "title": "To Rome with Love",
+    "year": 2012,
+    "runtime": 111,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "Italy",
+      "United States of America"
+    ],
+    "studios": [
+      "Perdido Productions",
+      "Medusa Film",
+      "Gravier Productions"
+    ]
+  },
+  {
+    "id": 59436,
+    "title": "Midnight in Paris",
+    "year": 2011,
+    "runtime": 94,
+    "genres": [
+      "Fantasy",
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "France",
+      "Spain",
+      "United States of America"
+    ],
+    "studios": [
+      "Mediapro",
+      "Versátil Cinema",
+      "Pontchartrain Productions",
+      "Gravier Productions"
+    ]
+  },
+  {
+    "id": 160588,
+    "title": "Blue Jasmine",
+    "year": 2013,
+    "runtime": 99,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Gravier Productions",
+      "Perdido Productions"
+    ]
+  },
+  {
+    "id": 229297,
+    "title": "Magic in the Moonlight",
+    "year": 2014,
+    "runtime": 98,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Perdido Productions",
+      "Gravier Productions",
+      "Dippermouth",
+      "Ske-Dat-De-Dat Productions"
+    ]
+  },
+  {
+    "id": 859235,
+    "title": "Coup de Chance",
+    "year": 2023,
+    "runtime": 96,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "France",
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Gravier Productions",
+      "Perdido Productions",
+      "Dippermouth",
+      "Petite Fleur Productions"
+    ]
+  },
+  {
+    "id": 282984,
+    "title": "Irrational Man",
+    "year": 2015,
+    "runtime": 95,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Perdido Productions",
+      "Gravier Productions"
+    ]
+  },
+  {
+    "id": 339397,
+    "title": "Café Society",
+    "year": 2016,
+    "runtime": 97,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Perdido Productions",
+      "Gravier Productions"
+    ]
+  },
+  {
+    "id": 429189,
+    "title": "Wonder Wheel",
+    "year": 2017,
+    "runtime": 101,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Gravier Productions",
+      "Amazon Studios",
+      "Perdido Productions"
+    ]
+  },
+  {
+    "id": 475303,
+    "title": "A Rainy Day in New York",
+    "year": 2019,
+    "runtime": 92,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Gravier Productions",
+      "Perdido Productions"
+    ]
+  },
+  {
+    "id": 9686,
+    "title": "New York Stories",
+    "year": 1989,
+    "runtime": 124,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Touchstone Pictures",
+      "Jack Rollins & Charles H. Joffe Productions"
+    ]
+  },
+  {
+    "id": 606876,
+    "title": "Rifkin’s Festival",
+    "year": 2020,
+    "runtime": 92,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America",
+      "Spain",
+      "Italy"
+    ],
+    "studios": [
+      "The Mediapro Studio",
+      "Gravier Productions",
+      "Wildside",
+      "Perdido Productions"
+    ]
+  },
+  {
+    "id": 223,
+    "title": "Rebecca",
+    "year": 1940,
+    "runtime": 130,
+    "genres": [
+      "Mystery",
+      "Romance",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Selznick International Pictures"
+    ]
+  },
+  {
+    "id": 213,
+    "title": "North by Northwest",
+    "year": 1959,
+    "runtime": 136,
+    "genres": [
+      "Thriller",
+      "Adventure"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Metro-Goldwyn-Mayer"
+    ]
+  },
+  {
+    "id": 260,
+    "title": "The 39 Steps",
+    "year": 1935,
+    "runtime": 86,
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Gaumont-British Picture Corporation"
+    ]
+  },
+  {
+    "id": 303,
+    "title": "Notorious",
+    "year": 1946,
+    "runtime": 103,
+    "genres": [
+      "Thriller",
+      "Romance",
+      "Mystery"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "RKO Radio Pictures",
+      "Vanguard Films"
+    ]
+  },
+  {
+    "id": 381,
+    "title": "To Catch a Thief",
+    "year": 1955,
+    "runtime": 106,
+    "genres": [
+      "Mystery",
+      "Romance",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Paramount Pictures"
+    ]
+  },
+  {
+    "id": 521,
+    "title": "Dial M for Murder",
+    "year": 1954,
+    "runtime": 105,
+    "genres": [
+      "Thriller",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Warner Bros. Pictures"
+    ]
+  },
+  {
+    "id": 506,
+    "title": "Marnie",
+    "year": 1964,
+    "runtime": 130,
+    "genres": [
+      "Thriller",
+      "Mystery",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Alfred J. Hitchcock Productions",
+      "Universal Pictures"
+    ]
+  },
+  {
+    "id": 543,
+    "title": "Blackmail",
+    "year": 1929,
+    "runtime": 86,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Crime"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 539,
+    "title": "Psycho",
+    "year": 1960,
+    "runtime": 109,
+    "genres": [
+      "Horror",
+      "Thriller",
+      "Mystery"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Shamley Productions"
+    ]
+  },
+  {
+    "id": 574,
+    "title": "The Man Who Knew Too Much",
+    "year": 1956,
+    "runtime": 120,
+    "genres": [
+      "Thriller",
+      "Mystery"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Paramount Pictures"
+    ]
+  },
+  {
+    "id": 567,
+    "title": "Rear Window",
+    "year": 1954,
+    "runtime": 112,
+    "genres": [
+      "Thriller",
+      "Mystery"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Alfred J. Hitchcock Productions"
+    ]
+  },
+  {
+    "id": 571,
+    "title": "The Birds",
+    "year": 1963,
+    "runtime": 119,
+    "genres": [
+      "Horror",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Alfred J. Hitchcock Productions"
+    ]
+  },
+  {
+    "id": 573,
+    "title": "Frenzy",
+    "year": 1972,
+    "runtime": 116,
+    "genres": [
+      "Crime",
+      "Thriller",
+      "Horror"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Universal Pictures UK"
+    ]
+  },
+  {
+    "id": 1580,
+    "title": "Rope",
+    "year": 1948,
+    "runtime": 81,
+    "genres": [
+      "Thriller",
+      "Crime",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Transatlantic Pictures",
+      "Warner Bros. Pictures"
+    ]
+  },
+  {
+    "id": 2370,
+    "title": "Topaz",
+    "year": 1969,
+    "runtime": 127,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Universal Pictures",
+      "Alfred J. Hitchcock Productions"
+    ]
+  },
+  {
+    "id": 845,
+    "title": "Strangers on a Train",
+    "year": 1951,
+    "runtime": 101,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Warner Bros. Pictures"
+    ]
+  },
+  {
+    "id": 2761,
+    "title": "Secret Agent",
+    "year": 1936,
+    "runtime": 86,
+    "genres": [
+      "Thriller",
+      "Mystery",
+      "Romance"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Gaumont-British Picture Corporation"
+    ]
+  },
+  {
+    "id": 2760,
+    "title": "The Lodger: A Story of the London Fog",
+    "year": 1927,
+    "runtime": 91,
+    "genres": [
+      "Crime",
+      "Thriller",
+      "Mystery"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Carlyle Blackwell Productions",
+      "Gainsborough Pictures"
+    ]
+  },
+  {
+    "id": 2762,
+    "title": "Young and Innocent",
+    "year": 1937,
+    "runtime": 83,
+    "genres": [
+      "Thriller",
+      "Romance",
+      "Mystery"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Gaumont-British Picture Corporation"
+    ]
+  },
+  {
+    "id": 4175,
+    "title": "Under Capricorn",
+    "year": 1949,
+    "runtime": 118,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Transatlantic Pictures"
+    ]
+  },
+  {
+    "id": 4174,
+    "title": "Spellbound",
+    "year": 1945,
+    "runtime": 111,
+    "genres": [
+      "Thriller",
+      "Mystery",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Selznick International Pictures",
+      "Vanguard Films"
+    ]
+  },
+  {
+    "id": 1978,
+    "title": "Stage Fright",
+    "year": 1950,
+    "runtime": 110,
+    "genres": [
+      "Thriller"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Warner Bros. Pictures",
+      "Transatlantic Pictures"
+    ]
+  },
+  {
+    "id": 940,
+    "title": "The Lady Vanishes",
+    "year": 1938,
+    "runtime": 96,
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Gainsborough Pictures"
+    ]
+  },
+  {
+    "id": 30159,
+    "title": "I Confess",
+    "year": 1953,
+    "runtime": 95,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Warner Bros. Pictures"
+    ]
+  },
+  {
+    "id": 11219,
+    "title": "The Trouble with Harry",
+    "year": 1955,
+    "runtime": 99,
+    "genres": [
+      "Comedy",
+      "Mystery"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Alfred J. Hitchcock Productions",
+      "Paramount Pictures"
+    ]
+  },
+  {
+    "id": 20213,
+    "title": "The Manxman",
+    "year": 1929,
+    "runtime": 100,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 5780,
+    "title": "Torn Curtain",
+    "year": 1966,
+    "runtime": 127,
+    "genres": [
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Alfred J. Hitchcock Productions",
+      "Universal Pictures"
+    ]
+  },
+  {
+    "id": 21734,
+    "title": "Shadow of a Doubt",
+    "year": 1943,
+    "runtime": 107,
+    "genres": [
+      "Thriller",
+      "Mystery"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Universal Pictures",
+      "Skirball Productions"
+    ]
+  },
+  {
+    "id": 5854,
+    "title": "Family Plot",
+    "year": 1976,
+    "runtime": 120,
+    "genres": [
+      "Comedy",
+      "Crime",
+      "Thriller",
+      "Mystery"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Universal Pictures",
+      "Alfred J. Hitchcock Productions"
+    ]
+  },
+  {
+    "id": 22527,
+    "title": "The Wrong Man",
+    "year": 1956,
+    "runtime": 105,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Warner Bros. Pictures"
+    ]
+  },
+  {
+    "id": 11462,
+    "title": "Suspicion",
+    "year": 1941,
+    "runtime": 99,
+    "genres": [
+      "Mystery",
+      "Romance",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "RKO Radio Pictures"
+    ]
+  },
+  {
+    "id": 31667,
+    "title": "The Paradine Case",
+    "year": 1947,
+    "runtime": 114,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Vanguard Films",
+      "Selznick International Pictures"
+    ]
+  },
+  {
+    "id": 8208,
+    "title": "The Man Who Knew Too Much",
+    "year": 1934,
+    "runtime": 76,
+    "genres": [
+      "Thriller",
+      "Mystery"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Gaumont-British Picture Corporation"
+    ]
+  },
+  {
+    "id": 25670,
+    "title": "Foreign Correspondent",
+    "year": 1940,
+    "runtime": 120,
+    "genres": [
+      "Thriller",
+      "Mystery",
+      "Action"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Walter Wanger Productions"
+    ]
+  },
+  {
+    "id": 31930,
+    "title": "Murder!",
+    "year": 1930,
+    "runtime": 102,
+    "genres": [
+      "Mystery",
+      "Crime",
+      "Thriller"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 31995,
+    "title": "Jamaica Inn",
+    "year": 1939,
+    "runtime": 100,
+    "genres": [
+      "Crime",
+      "Adventure",
+      "Thriller"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Mayflower Pictures"
+    ]
+  },
+  {
+    "id": 31997,
+    "title": "Saboteur",
+    "year": 1942,
+    "runtime": 109,
+    "genres": [
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Universal Pictures",
+      "Frank Lloyd Productions"
+    ]
+  },
+  {
+    "id": 24197,
+    "title": "Mr. & Mrs. Smith",
+    "year": 1941,
+    "runtime": 95,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "RKO Radio Pictures"
+    ]
+  },
+  {
+    "id": 12684,
+    "title": "Sabotage",
+    "year": 1937,
+    "runtime": 77,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Crime"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Gaumont-British Picture Corporation"
+    ]
+  },
+  {
+    "id": 13321,
+    "title": "Lifeboat",
+    "year": 1944,
+    "runtime": 96,
+    "genres": [
+      "War",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "20th Century Fox"
+    ]
+  },
+  {
+    "id": 35832,
+    "title": "The Farmer's Wife",
+    "year": 1928,
+    "runtime": 112,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 36055,
+    "title": "Easy Virtue",
+    "year": 1928,
+    "runtime": 70,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Gainsborough Pictures"
+    ]
+  },
+  {
+    "id": 36049,
+    "title": "Rich and Strange",
+    "year": 1931,
+    "runtime": 83,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama",
+      "Adventure"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 36054,
+    "title": "Champagne",
+    "year": 1928,
+    "runtime": 105,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 36056,
+    "title": "The Ring",
+    "year": 1927,
+    "runtime": 116,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 15007,
+    "title": "Number Seventeen",
+    "year": 1932,
+    "runtime": 63,
+    "genres": [
+      "Thriller",
+      "Mystery",
+      "Crime"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 64398,
+    "title": "The Pleasure Garden",
+    "year": 1925,
+    "runtime": 91,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Germany",
+      "United Kingdom"
+    ],
+    "studios": [
+      "Münchner Lichtspielkunst",
+      "Bavaria Film",
+      "Gainsborough Pictures"
+    ]
+  },
+  {
+    "id": 47695,
+    "title": "Juno and the Paycock",
+    "year": 1930,
+    "runtime": 94,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 52748,
+    "title": "The Skin Game",
+    "year": 1931,
+    "runtime": 82,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 52782,
+    "title": "Downhill",
+    "year": 1927,
+    "runtime": 106,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Gainsborough Pictures"
+    ]
+  },
+  {
+    "id": 52907,
+    "title": "Waltzes from Vienna",
+    "year": 1934,
+    "runtime": 81,
+    "genres": [
+      "History",
+      "Romance",
+      "Music"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "Gaumont-British Picture Corporation"
+    ]
+  },
+  {
+    "id": 75793,
+    "title": "Elstree Calling",
+    "year": 1930,
+    "runtime": 83,
+    "genres": [
+      "Music",
+      "Comedy"
+    ],
+    "countries": [
+      "United Kingdom"
+    ],
+    "studios": [
+      "British International Pictures"
+    ]
+  },
+  {
+    "id": 97867,
+    "title": "Mary",
+    "year": 1931,
+    "runtime": 78,
+    "genres": [
+      "Mystery",
+      "Crime",
+      "Thriller"
+    ],
+    "countries": [
+      "United Kingdom",
+      "Germany"
+    ],
+    "studios": [
+      "British International Pictures",
+      "Südfilm"
+    ]
+  },
+  {
+    "id": 426,
+    "title": "Vertigo",
+    "year": 1958,
+    "runtime": 128,
+    "genres": [
+      "Mystery",
+      "Romance",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Paramount Pictures",
+      "Alfred J. Hitchcock Productions"
+    ]
+  },
+  {
+    "id": 405,
+    "title": "La Strada",
+    "year": 1954,
+    "runtime": 115,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Italy"
+    ],
+    "studios": [
+      "Ponti-De Laurentiis Cinematografica"
+    ]
+  },
+  {
+    "id": 422,
+    "title": "8½",
+    "year": 1963,
+    "runtime": 139,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Italy",
+      "France"
+    ],
+    "studios": [
+      "Cineriz",
+      "Francinex"
+    ]
+  },
+  {
+    "id": 11163,
+    "title": "Satyricon",
+    "year": 1969,
+    "runtime": 129,
+    "genres": [
+      "Drama",
+      "Fantasy"
+    ],
+    "countries": [
+      "Italy"
+    ],
+    "studios": [
+      "PEA"
+    ]
+  },
+  {
+    "id": 5622,
+    "title": "And the Ship Sails On",
+    "year": 1983,
+    "runtime": 128,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Societa Investimenti Milanese (S.I.M.)",
+      "Gaumont",
+      "RAI",
+      "Vides Cinematografica"
+    ]
+  },
+  {
+    "id": 11035,
+    "title": "Roma",
+    "year": 1972,
+    "runtime": 120,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Les Productions Artistes Associés",
+      "Ultra Film"
+    ]
+  },
+  {
+    "id": 31293,
+    "title": "Love in the City",
+    "year": 1953,
+    "runtime": 115,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Italy"
+    ],
+    "studios": [
+      "Faro Film"
+    ]
+  },
+  {
+    "id": 11936,
+    "title": "City of Women",
+    "year": 1980,
+    "runtime": 140,
+    "genres": [
+      "Comedy",
+      "Adventure",
+      "Fantasy"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Opera Film Produzione",
+      "Gaumont"
+    ]
+  },
+  {
+    "id": 7857,
+    "title": "Amarcord",
+    "year": 1973,
+    "runtime": 123,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "Italy",
+      "France"
+    ],
+    "studios": [
+      "Productions et Éditions Cinématographiques Françaises",
+      "F.C. Produzioni"
+    ]
+  },
+  {
+    "id": 12548,
+    "title": "I Vitelloni",
+    "year": 1953,
+    "runtime": 103,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Peg-Films",
+      "Cité Films"
+    ]
+  },
+  {
+    "id": 36102,
+    "title": "The Swindle",
+    "year": 1955,
+    "runtime": 113,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Titanus",
+      "Société Générale de Cinématographie (S.G.C.)"
+    ]
+  },
+  {
+    "id": 41225,
+    "title": "Spirits of the Dead",
+    "year": 1968,
+    "runtime": 121,
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Drama"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "PEA",
+      "Les Films Marceau",
+      "Cocinor"
+    ]
+  },
+  {
+    "id": 42021,
+    "title": "Ginger and Fred",
+    "year": 1986,
+    "runtime": 125,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "France",
+      "Germany",
+      "Italy"
+    ],
+    "studios": [
+      "PEA",
+      "Revcom Films",
+      "Les Films Ariane",
+      "Stella Film",
+      "RAI",
+      "France 3 Cinéma",
+      "Anthea Film"
+    ]
+  },
+  {
+    "id": 42236,
+    "title": "Fellini's Casanova",
+    "year": 1976,
+    "runtime": 148,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "countries": [
+      "Italy"
+    ],
+    "studios": [
+      "PEA"
+    ]
+  },
+  {
+    "id": 42590,
+    "title": "The Clowns",
+    "year": 1970,
+    "runtime": 93,
+    "genres": [
+      "TV Movie",
+      "Comedy"
+    ],
+    "countries": [
+      "Italy",
+      "France",
+      "Germany"
+    ],
+    "studios": [
+      "RAI",
+      "Compagnia Leone Cinematografica",
+      "ORTF",
+      "Bavaria Film"
+    ]
+  },
+  {
+    "id": 43361,
+    "title": "The White Sheik",
+    "year": 1952,
+    "runtime": 83,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "Italy"
+    ],
+    "studios": [
+      "Produzione Distribuzione Cinematografica (P.D.C.)",
+      "Organizzazione Film Internazionali (OFI)"
+    ]
+  },
+  {
+    "id": 43389,
+    "title": "Variety Lights",
+    "year": 1950,
+    "runtime": 93,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "countries": [
+      "Italy"
+    ],
+    "studios": [
+      "Capitolium"
+    ]
+  },
+  {
+    "id": 45267,
+    "title": "Boccaccio '70",
+    "year": 1962,
+    "runtime": 204,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Cineriz",
+      "Concordia Compagnia Cinematografica",
+      "gray-film"
+    ]
+  },
+  {
+    "id": 47715,
+    "title": "Intervista",
+    "year": 1987,
+    "runtime": 107,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "countries": [
+      "Italy"
+    ],
+    "studios": [
+      "Fernlyn",
+      "Cinecittà Studios",
+      "RAI",
+      "Aljosha"
+    ]
+  },
+  {
+    "id": 47850,
+    "title": "Orchestra Rehearsal",
+    "year": 1979,
+    "runtime": 72,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Music"
+    ],
+    "countries": [
+      "Germany",
+      "Italy"
+    ],
+    "studios": [
+      "Daimo Cinematografica",
+      "RAI",
+      "Albatros Filmproduktion"
+    ]
+  },
+  {
+    "id": 19120,
+    "title": "Juliet of the Spirits",
+    "year": 1965,
+    "runtime": 148,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Fantasy"
+    ],
+    "countries": [
+      "Italy",
+      "France"
+    ],
+    "studios": [
+      "Francoriz Production",
+      "Rizzoli Film",
+      "Cineriz"
+    ]
+  },
+  {
+    "id": 19426,
+    "title": "Nights of Cabiria",
+    "year": 1957,
+    "runtime": 110,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Italy",
+      "France"
+    ],
+    "studios": [
+      "DDL Cinematografica",
+      "Les Films Marceau"
+    ]
+  },
+  {
+    "id": 59050,
+    "title": "The Voice of the Moon",
+    "year": 1990,
+    "runtime": 120,
+    "genres": [
+      "Adventure",
+      "Comedy",
+      "Fantasy"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Cecchi Gori Group Tiger Cinematografica",
+      "Films A2",
+      "La Sept Cinéma",
+      "Cinémax",
+      "RAI"
+    ]
+  },
+  {
+    "id": 439,
+    "title": "La Dolce Vita",
+    "year": 1960,
+    "runtime": 176,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Cinecittà Studios",
+      "Pathé Consortium Cinéma",
+      "Riama Film"
+    ]
+  },
+  {
+    "id": 346,
+    "title": "Seven Samurai",
+    "year": 1954,
+    "runtime": 207,
+    "genres": [
+      "Action",
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 1059,
+    "title": "The Hidden Fortress",
+    "year": 1958,
+    "runtime": 139,
+    "genres": [
+      "Drama",
+      "Action",
+      "Adventure"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 548,
+    "title": "Rashomon",
+    "year": 1950,
+    "runtime": 88,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Mystery"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "Daiei Film"
+    ]
+  },
+  {
+    "id": 30368,
+    "title": "Stray Dog",
+    "year": 1949,
+    "runtime": 122,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "Film Art Association",
+      "Shintoho Company"
+    ]
+  },
+  {
+    "id": 21490,
+    "title": "I Live in Fear",
+    "year": 1955,
+    "runtime": 103,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 3777,
+    "title": "Throne of Blood",
+    "year": 1957,
+    "runtime": 108,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 3782,
+    "title": "Ikiru",
+    "year": 1952,
+    "runtime": 143,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 3780,
+    "title": "Red Beard",
+    "year": 1965,
+    "runtime": 185,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO",
+      "Kurosawa Production"
+    ]
+  },
+  {
+    "id": 20645,
+    "title": "Rhapsody in August",
+    "year": 1991,
+    "runtime": 98,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "Kurosawa Production",
+      "Shochiku",
+      "TOHO Studios",
+      "Sony PCL",
+      "IMAGICA"
+    ]
+  },
+  {
+    "id": 11645,
+    "title": "Ran",
+    "year": 1985,
+    "runtime": 160,
+    "genres": [
+      "Action",
+      "Drama",
+      "History"
+    ],
+    "countries": [
+      "Japan",
+      "France"
+    ],
+    "studios": [
+      "Nippon Herald Films",
+      "Greenwich Film Production",
+      "Herald Ace"
+    ]
+  },
+  {
+    "id": 11878,
+    "title": "Yojimbo",
+    "year": 1961,
+    "runtime": 110,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 11953,
+    "title": "Kagemusha",
+    "year": 1980,
+    "runtime": 180,
+    "genres": [
+      "Action",
+      "Drama",
+      "History",
+      "War"
+    ],
+    "countries": [
+      "Japan",
+      "United States of America"
+    ],
+    "studios": [
+      "TOHO",
+      "20th Century Fox",
+      "Kurosawa Production"
+    ]
+  },
+  {
+    "id": 11712,
+    "title": "Sanjuro",
+    "year": 1962,
+    "runtime": 96,
+    "genres": [
+      "Drama",
+      "Action",
+      "Comedy"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 24774,
+    "title": "The Idiot",
+    "year": 1951,
+    "runtime": 166,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "Shochiku"
+    ]
+  },
+  {
+    "id": 25858,
+    "title": "Drunken Angel",
+    "year": 1948,
+    "runtime": 98,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 31589,
+    "title": "The Bad Sleep Well",
+    "year": 1960,
+    "runtime": 150,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO",
+      "Kurosawa Production"
+    ]
+  },
+  {
+    "id": 32690,
+    "title": "Scandal",
+    "year": 1950,
+    "runtime": 104,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "Shochiku"
+    ]
+  },
+  {
+    "id": 12493,
+    "title": "High and Low",
+    "year": 1963,
+    "runtime": 142,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO",
+      "Kurosawa Production"
+    ]
+  },
+  {
+    "id": 26893,
+    "title": "The Lower Depths",
+    "year": 1957,
+    "runtime": 125,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 12516,
+    "title": "Dreams",
+    "year": 1990,
+    "runtime": 119,
+    "genres": [
+      "Fantasy",
+      "Drama"
+    ],
+    "countries": [
+      "Japan",
+      "United States of America"
+    ],
+    "studios": [
+      "Warner Bros. Pictures",
+      "Amblin Entertainment",
+      "Kurosawa Production",
+      "Akira Kurosawa USA"
+    ]
+  },
+  {
+    "id": 9764,
+    "title": "Dersu Uzala",
+    "year": 1975,
+    "runtime": 141,
+    "genres": [
+      "Adventure",
+      "Drama"
+    ],
+    "countries": [
+      "Japan",
+      "Soviet Union"
+    ],
+    "studios": [
+      "Daiei Film",
+      "Mosfilm"
+    ]
+  },
+  {
+    "id": 33205,
+    "title": "Dodes'ka-den",
+    "year": 1970,
+    "runtime": 140,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "Yonki-no-Kai Productions",
+      "TOHO"
+    ]
+  },
+  {
+    "id": 35022,
+    "title": "Sanshiro Sugata",
+    "year": 1943,
+    "runtime": 80,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "Toho Eiga"
+    ]
+  },
+  {
+    "id": 13889,
+    "title": "Madadayo",
+    "year": 1993,
+    "runtime": 134,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "Tokuma Shoten",
+      "dentsu Music and Entertainment",
+      "Kurosawa Production",
+      "Daiei Film"
+    ]
+  },
+  {
+    "id": 43487,
+    "title": "No Regrets for Our Youth",
+    "year": 1946,
+    "runtime": 111,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 37513,
+    "title": "The Quiet Duel",
+    "year": 1949,
+    "runtime": 95,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "Daiei Film"
+    ]
+  },
+  {
+    "id": 45967,
+    "title": "One Wonderful Sunday",
+    "year": 1947,
+    "runtime": 108,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 45965,
+    "title": "Sanshiro Sugata, Part Two",
+    "year": 1945,
+    "runtime": 83,
+    "genres": [
+      "Action",
+      "Drama",
+      "Adventure"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 17988,
+    "title": "The Most Beautiful",
+    "year": 1944,
+    "runtime": 85,
+    "genres": [
+      "Drama",
+      "War"
+    ],
+    "countries": [
+      "Japan"
+    ],
+    "studios": [
+      "TOHO"
+    ]
+  },
+  {
+    "id": 776,
+    "title": "The Rules of the Game",
+    "year": 1939,
+    "runtime": 106,
+    "genres": [
+      "Drama",
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "La Nouvelle Edition Francaise",
+      "Franco London Films"
+    ]
+  },
+  {
+    "id": 777,
+    "title": "Grand Illusion",
+    "year": 1937,
+    "runtime": 114,
+    "genres": [
+      "Drama",
+      "History",
+      "War"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Réalisation d'Art Cinématographique"
+    ]
+  },
+  {
+    "id": 3026,
+    "title": "Experiment in Evil",
+    "year": 1960,
+    "runtime": 95,
+    "genres": [
+      "TV Movie",
+      "Science Fiction",
+      "Horror"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Compagnie Jean Renoir",
+      "Radio-Télévision Française"
+    ]
+  },
+  {
+    "id": 26614,
+    "title": "La Chienne",
+    "year": 1931,
+    "runtime": 96,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Les Établissements Braunberger-Richebé"
+    ]
+  },
+  {
+    "id": 29415,
+    "title": "La Bête Humaine",
+    "year": 1938,
+    "runtime": 98,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Thriller"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Paris Film Production"
+    ]
+  },
+  {
+    "id": 43000,
+    "title": "The Elusive Corporal",
+    "year": 1962,
+    "runtime": 105,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "War"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Les Films du Cyclope",
+      "Société Nouvelle Pathé Cinéma"
+    ]
+  },
+  {
+    "id": 43101,
+    "title": "Picnic on the Grass",
+    "year": 1959,
+    "runtime": 91,
+    "genres": [
+      "Romance",
+      "Comedy"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Compagnie Jean Renoir"
+    ]
+  },
+  {
+    "id": 43123,
+    "title": "Madame Bovary",
+    "year": 1934,
+    "runtime": 101,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Société Nouvelle des Films"
+    ]
+  },
+  {
+    "id": 37041,
+    "title": "The Woman on the Beach",
+    "year": 1947,
+    "runtime": 71,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "RKO Radio Pictures"
+    ]
+  },
+  {
+    "id": 45213,
+    "title": "French Cancan",
+    "year": 1955,
+    "runtime": 102,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Music"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Jolly Film",
+      "Franco London Films"
+    ]
+  },
+  {
+    "id": 45215,
+    "title": "Swamp Water",
+    "year": 1941,
+    "runtime": 90,
+    "genres": [
+      "Crime",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "20th Century Fox"
+    ]
+  },
+  {
+    "id": 45212,
+    "title": "The Diary of a Chambermaid",
+    "year": 1946,
+    "runtime": 91,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Benedict Bogeaus Production"
+    ]
+  },
+  {
+    "id": 45218,
+    "title": "The River",
+    "year": 1951,
+    "runtime": 99,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "France",
+      "India"
+    ],
+    "studios": [
+      "Oriental International Films"
+    ]
+  },
+  {
+    "id": 45219,
+    "title": "The Southerner",
+    "year": 1945,
+    "runtime": 92,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Jean Renoir Productions",
+      "United Artists",
+      "David L. Loew Productions"
+    ]
+  },
+  {
+    "id": 45220,
+    "title": "This Land Is Mine",
+    "year": 1943,
+    "runtime": 103,
+    "genres": [
+      "Drama",
+      "War"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Jean-Renoir- Dudly Nichols Productions",
+      "RKO Radio Pictures"
+    ]
+  },
+  {
+    "id": 45802,
+    "title": "The Lower Depths",
+    "year": 1936,
+    "runtime": 92,
+    "genres": [
+      "Drama",
+      "Romance",
+      "Crime"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Albatros"
+    ]
+  },
+  {
+    "id": 66812,
+    "title": "Nana",
+    "year": 1926,
+    "runtime": 168,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Les Films Jean Renoir"
+    ]
+  },
+  {
+    "id": 48365,
+    "title": "Boudu Saved from Drowning",
+    "year": 1932,
+    "runtime": 84,
+    "genres": [
+      "Comedy"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Les Établissements Jacques Haïk",
+      "Les Productions Michel Simon",
+      "Crédit Cinématographique Français (CCF)"
+    ]
+  },
+  {
+    "id": 51949,
+    "title": "Toni",
+    "year": 1935,
+    "runtime": 84,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Les Films Marcel Pagnol"
+    ]
+  },
+  {
+    "id": 53156,
+    "title": "Elena and Her Men",
+    "year": 1956,
+    "runtime": 95,
+    "genres": [
+      "Drama",
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Electra Compagnia Cinematografica",
+      "Franco London Films",
+      "Les Films Gibé"
+    ]
+  },
+  {
+    "id": 56167,
+    "title": "The Golden Coach",
+    "year": 1952,
+    "runtime": 105,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "France",
+      "Italy"
+    ],
+    "studios": [
+      "Panaria Film",
+      "Delphinus",
+      "Hoche Productions"
+    ]
+  },
+  {
+    "id": 84038,
+    "title": "Night at the Crossroads",
+    "year": 1932,
+    "runtime": 75,
+    "genres": [
+      "Mystery",
+      "Crime",
+      "Drama"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": []
+  },
+  {
+    "id": 113781,
+    "title": "Whirlpool of Fate",
+    "year": 1925,
+    "runtime": 83,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Les Films Jean Renoir"
+    ]
+  },
+  {
+    "id": 43845,
+    "title": "La Marseillaise",
+    "year": 1938,
+    "runtime": 131,
+    "genres": [
+      "History",
+      "Drama"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Confédération Générale du Travail (CGT)",
+      "Societé d'Exploitation et de Distribution de Films (SEDIF)",
+      "Réalisation d'Art Cinématographique"
+    ]
+  },
+  {
+    "id": 52677,
+    "title": "The Crime of Monsieur Lange",
+    "year": 1936,
+    "runtime": 80,
+    "genres": [
+      "Drama",
+      "Crime",
+      "Comedy"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Films Obéron"
+    ]
+  },
+  {
+    "id": 807,
+    "title": "Se7en",
+    "year": 1995,
+    "runtime": 127,
+    "genres": [
+      "Crime",
+      "Mystery",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "New Line Cinema",
+      "Juno Pix",
+      "Arnold Kopelson Productions"
+    ]
+  },
+  {
+    "id": 2649,
+    "title": "The Game",
+    "year": 1997,
+    "runtime": 129,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Mystery"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "PolyGram Filmed Entertainment",
+      "Propaganda Films"
+    ]
+  },
+  {
+    "id": 1949,
+    "title": "Zodiac",
+    "year": 2007,
+    "runtime": 157,
+    "genres": [
+      "Crime",
+      "Mystery",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Paramount Pictures",
+      "Warner Bros. Pictures",
+      "Phoenix Pictures"
+    ]
+  },
+  {
+    "id": 4547,
+    "title": "Panic Room",
+    "year": 2002,
+    "runtime": 111,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Columbia Pictures",
+      "Hofflund/Polone",
+      "Indelible Pictures"
+    ]
+  },
+  {
+    "id": 4922,
+    "title": "The Curious Case of Benjamin Button",
+    "year": 2008,
+    "runtime": 166,
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Paramount Pictures",
+      "Warner Bros. Pictures",
+      "The Kennedy/Marshall Company"
+    ]
+  },
+  {
+    "id": 8077,
+    "title": "Alien³",
+    "year": 1992,
+    "runtime": 114,
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Horror"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "20th Century Fox",
+      "Brandywine Productions"
+    ]
+  },
+  {
+    "id": 37799,
+    "title": "The Social Network",
+    "year": 2010,
+    "runtime": 121,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Columbia Pictures",
+      "Relativity Media",
+      "Scott Rudin Productions",
+      "Michael De Luca Productions",
+      "Trigger Street Productions"
+    ]
+  },
+  {
+    "id": 65754,
+    "title": "The Girl with the Dragon Tattoo",
+    "year": 2011,
+    "runtime": 158,
+    "genres": [
+      "Thriller",
+      "Crime",
+      "Mystery"
+    ],
+    "countries": [
+      "Sweden",
+      "United States of America"
+    ],
+    "studios": [
+      "Columbia Pictures",
+      "Metro-Goldwyn-Mayer",
+      "Scott Rudin Productions",
+      "Yellow Bird"
+    ]
+  },
+  {
+    "id": 210577,
+    "title": "Gone Girl",
+    "year": 2014,
+    "runtime": 149,
+    "genres": [
+      "Mystery",
+      "Thriller",
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "20th Century Fox",
+      "Regency Enterprises",
+      "TSG Entertainment"
+    ]
+  },
+  {
+    "id": 550,
+    "title": "Fight Club",
+    "year": 1999,
+    "runtime": 139,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "Germany",
+      "United States of America"
+    ],
+    "studios": [
+      "Fox 2000 Pictures",
+      "Regency Enterprises",
+      "Linson Entertainment",
+      "20th Century Fox",
+      "Taurus Film"
+    ]
+  },
+  {
+    "id": 614560,
+    "title": "Mank",
+    "year": 2020,
+    "runtime": 132,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Netflix International Pictures"
+    ]
+  },
+  {
+    "id": 284582,
+    "title": "Madonna: The Immaculate Collection",
+    "year": 1990,
+    "runtime": 60,
+    "genres": [
+      "Music"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Jellybean Productions",
+      "Kalisa",
+      "Nile Rodgers Productions",
+      "Sire Records",
+      "Warner Records"
+    ]
+  },
+  {
+    "id": 800158,
+    "title": "The Killer",
+    "year": 2023,
+    "runtime": 118,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Netflix"
+    ]
+  },
+  {
+    "id": 267246,
+    "title": "Michael Jackson: Dangerous - The Short Films",
+    "year": 1993,
+    "runtime": 112,
+    "genres": [
+      "Music"
+    ],
+    "countries": [],
+    "studios": [
+      "Epic Records"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Four Rooms",
+    "year": 1995,
+    "runtime": 98,
+    "genres": [
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Miramax",
+      "A Band Apart"
+    ]
+  },
+  {
+    "id": 285923,
+    "title": "Grindhouse",
+    "year": 2007,
+    "runtime": 191,
+    "genres": [
+      "Thriller",
+      "Action",
+      "Horror"
+    ],
+    "countries": [
+      "United States of America",
+      "Canada",
+      "United Kingdom"
+    ],
+    "studios": [
+      "Yer Dead",
+      "Dimension Films",
+      "Big Talk Studios",
+      "Eyetronics",
+      "Rodriguez International Pictures",
+      "Troublemaker Studios"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Kill Bill: Vol. 1",
+    "year": 2003,
+    "runtime": 111,
+    "genres": [
+      "Action",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Miramax",
+      "A Band Apart",
+      "Super Cool ManChu"
+    ]
+  },
+  {
+    "id": 68718,
+    "title": "Django Unchained",
+    "year": 2012,
+    "runtime": 165,
+    "genres": [
+      "Drama",
+      "Western"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "The Weinstein Company",
+      "Columbia Pictures"
+    ]
+  },
+  {
+    "id": 184,
+    "title": "Jackie Brown",
+    "year": 1997,
+    "runtime": 154,
+    "genres": [
+      "Crime",
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Miramax",
+      "A Band Apart",
+      "Mighty Mighty Afrodite Productions"
+    ]
+  },
+  {
+    "id": 1991,
+    "title": "Death Proof",
+    "year": 2007,
+    "runtime": 113,
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Dimension Films",
+      "Troublemaker Studios"
+    ]
+  },
+  {
+    "id": 393,
+    "title": "Kill Bill: Vol. 2",
+    "year": 2004,
+    "runtime": 136,
+    "genres": [
+      "Action",
+      "Crime",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Super Cool ManChu",
+      "Miramax",
+      "A Band Apart"
+    ]
+  },
+  {
+    "id": 273248,
+    "title": "The Hateful Eight",
+    "year": 2015,
+    "runtime": 188,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Western"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "The Weinstein Company",
+      "Double Feature Films",
+      "FilmColony"
+    ]
+  },
+  {
+    "id": 466272,
+    "title": "Once Upon a Time... in Hollywood",
+    "year": 2019,
+    "runtime": 162,
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "China",
+      "United Kingdom",
+      "United States of America"
+    ],
+    "studios": [
+      "Heyday Films",
+      "Columbia Pictures",
+      "Bona Film Group"
+    ]
+  },
+  {
+    "id": 680,
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "runtime": 154,
+    "genres": [
+      "Thriller",
+      "Crime",
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Miramax",
+      "A Band Apart",
+      "Jersey Films"
+    ]
+  },
+  {
+    "id": 500,
+    "title": "Reservoir Dogs",
+    "year": 1992,
+    "runtime": 99,
+    "genres": [
+      "Crime",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Live Entertainment",
+      "Dog Eat Dog Productions"
+    ]
+  },
+  {
+    "id": 16869,
+    "title": "Inglourious Basterds",
+    "year": 2009,
+    "runtime": 153,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "War"
+    ],
+    "countries": [
+      "Germany",
+      "United States of America"
+    ],
+    "studios": [
+      "Universal Pictures",
+      "The Weinstein Company",
+      "A Band Apart",
+      "Zehnte Babelsberg Film",
+      "Visiona Romantica"
+    ]
+  },
+  {
+    "id": 414419,
+    "title": "Kill Bill: The Whole Bloody Affair",
+    "year": 2011,
+    "runtime": 253,
+    "genres": [
+      "Action",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Miramax",
+      "A Band Apart",
+      "Super Cool ManChu"
+    ]
+  },
+  {
+    "id": 334,
+    "title": "Magnolia",
+    "year": 1999,
+    "runtime": 189,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "New Line Cinema",
+      "Ghoulardi Film Company"
+    ]
+  },
+  {
+    "id": 4995,
+    "title": "Boogie Nights",
+    "year": 1997,
+    "runtime": 156,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "New Line Cinema",
+      "Lawrence Gordon Productions",
+      "Ghoulardi Film Company"
+    ]
+  },
+  {
+    "id": 8052,
+    "title": "Hard Eight",
+    "year": 1997,
+    "runtime": 102,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Trinity Filmed Entertainment",
+      "Rysher Entertainment",
+      "Green Parrot"
+    ]
+  },
+  {
+    "id": 8051,
+    "title": "Punch-Drunk Love",
+    "year": 2002,
+    "runtime": 96,
+    "genres": [
+      "Romance",
+      "Drama",
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Revolution Studios",
+      "New Line Cinema",
+      "JoAnne Sellar Productions",
+      "Ghoulardi Film Company"
+    ]
+  },
+  {
+    "id": 7345,
+    "title": "There Will Be Blood",
+    "year": 2007,
+    "runtime": 158,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Paramount Vantage",
+      "Miramax",
+      "JoAnne Sellar Productions",
+      "Ghoulardi Film Company"
+    ]
+  },
+  {
+    "id": 68722,
+    "title": "The Master",
+    "year": 2012,
+    "runtime": 137,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Annapurna Pictures",
+      "Ghoulardi Film Company",
+      "JoAnne Sellar Productions"
+    ]
+  },
+  {
+    "id": 171274,
+    "title": "Inherent Vice",
+    "year": 2014,
+    "runtime": 149,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Comedy"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Warner Bros. Pictures",
+      "IAC Films",
+      "JoAnne Sellar Productions",
+      "Ghoulardi Film Company",
+      "RatPac Entertainment"
+    ]
+  },
+  {
+    "id": 1054867,
+    "title": "One Battle After Another",
+    "year": 2025,
+    "runtime": 162,
+    "genres": [
+      "Thriller",
+      "Crime",
+      "Action"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Warner Bros. Pictures",
+      "Ghoulardi Film Company",
+      "Domain Entertainment"
+    ]
+  },
+  {
+    "id": 400617,
+    "title": "Phantom Thread",
+    "year": 2017,
+    "runtime": 130,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America",
+      "China"
+    ],
+    "studios": [
+      "Focus Features",
+      "Annapurna Pictures",
+      "Perfect World Pictures",
+      "JoAnne Sellar Productions",
+      "Ghoulardi Film Company"
+    ]
+  },
+  {
+    "id": 718032,
+    "title": "Licorice Pizza",
+    "year": 2021,
+    "runtime": 133,
+    "genres": [
+      "Drama",
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "Canada",
+      "United States of America"
+    ],
+    "studios": [
+      "Metro-Goldwyn-Mayer",
+      "Focus Features",
+      "Bron Studios",
+      "Ghoulardi Film Company"
+    ]
+  },
+  {
+    "id": 31026,
+    "title": "Distant",
+    "year": 2002,
+    "runtime": 106,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "NBC Film",
+      "NBC Ajans"
+    ]
+  },
+  {
+    "id": 8905,
+    "title": "Three Monkeys",
+    "year": 2008,
+    "runtime": 109,
+    "genres": [
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "Turkey",
+      "Italy",
+      "France"
+    ],
+    "studios": [
+      "Pyramide Productions",
+      "Zeynofilm",
+      "NBC Film",
+      "BiM Distribuzione"
+    ]
+  },
+  {
+    "id": 18421,
+    "title": "Climates",
+    "year": 2006,
+    "runtime": 98,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "France",
+      "Turkey"
+    ],
+    "studios": [
+      "Pyramide Films",
+      "Imaj",
+      "Co Production"
+    ]
+  },
+  {
+    "id": 52072,
+    "title": "Clouds of May",
+    "year": 1999,
+    "runtime": 130,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "NBC Film"
+    ]
+  },
+  {
+    "id": 52111,
+    "title": "The Small Town",
+    "year": 1997,
+    "runtime": 85,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "NBC Film"
+    ]
+  },
+  {
+    "id": 74879,
+    "title": "Once Upon a Time in Anatolia",
+    "year": 2011,
+    "runtime": 163,
+    "genres": [
+      "Drama",
+      "Crime"
+    ],
+    "countries": [
+      "Bosnia and Herzegovina",
+      "Turkey"
+    ],
+    "studios": [
+      "1000 Volt",
+      "Zeynofilm",
+      "2006 Produkcija"
+    ]
+  },
+  {
+    "id": 265169,
+    "title": "Winter Sleep",
+    "year": 2014,
+    "runtime": 196,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey",
+      "France",
+      "Germany"
+    ],
+    "studios": [
+      "Memento Films Production",
+      "Bredok Film Production",
+      "Zeynofilm",
+      "ARTE France Cinéma"
+    ]
+  },
+  {
+    "id": 418472,
+    "title": "The Wild Pear Tree",
+    "year": 2018,
+    "runtime": 188,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Bosnia and Herzegovina",
+      "Bulgaria",
+      "France",
+      "Germany",
+      "Macedonia",
+      "Qatar",
+      "Sweden",
+      "Turkey"
+    ],
+    "studios": [
+      "Zeynofilm",
+      "Memento Films Production",
+      "Detailfilm",
+      "ARTE France Cinéma",
+      "RFF International",
+      "Sisters and Brother Mitevski",
+      "2006 Produkcija",
+      "Film i Väst",
+      "Chimney Sweden",
+      "Imaj Film",
+      "DFI",
+      "Nulook Production",
+      "Kale Grubu"
+    ]
+  },
+  {
+    "id": 665733,
+    "title": "About Dry Grasses",
+    "year": 2023,
+    "runtime": 197,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "France",
+      "Germany",
+      "Sweden",
+      "Turkey"
+    ],
+    "studios": [
+      "NBC Film",
+      "Memento Films Production",
+      "Komplizen Film",
+      "Second Land",
+      "Film i Väst",
+      "ARTE France Cinéma",
+      "BR",
+      "Playtime",
+      "TRT 12 PUNTO"
+    ]
+  },
+  {
+    "id": 31413,
+    "title": "Innocence",
+    "year": 1997,
+    "runtime": 110,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "Mavi Film"
+    ]
+  },
+  {
+    "id": 41187,
+    "title": "Fate",
+    "year": 2001,
+    "runtime": 119,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "Mavi Film"
+    ]
+  },
+  {
+    "id": 37523,
+    "title": "Envy",
+    "year": 2009,
+    "runtime": 92,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "Yerli Film"
+    ]
+  },
+  {
+    "id": 44105,
+    "title": "Destiny",
+    "year": 2006,
+    "runtime": 103,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Greece",
+      "Turkey"
+    ],
+    "studios": [
+      "Max Productions",
+      "Greek Film Centre",
+      "Highway Productions",
+      "Mavi Film",
+      "Inkas Film & T.V. Productions"
+    ]
+  },
+  {
+    "id": 52187,
+    "title": "Block C",
+    "year": 1994,
+    "runtime": 92,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "Mavi Film"
+    ]
+  },
+  {
+    "id": 52188,
+    "title": "The Waiting Room",
+    "year": 2004,
+    "runtime": 92,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": []
+  },
+  {
+    "id": 101995,
+    "title": "Inside",
+    "year": 2012,
+    "runtime": 107,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "Mavi Film"
+    ]
+  },
+  {
+    "id": 79085,
+    "title": "The Third Page",
+    "year": 1999,
+    "runtime": 92,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "Mavi Film"
+    ]
+  },
+  {
+    "id": 79084,
+    "title": "The Confession",
+    "year": 2001,
+    "runtime": 88,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "Mavi Film"
+    ]
+  },
+  {
+    "id": 361897,
+    "title": "Nausea",
+    "year": 2015,
+    "runtime": 116,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "Mavi Film"
+    ]
+  },
+  {
+    "id": 394159,
+    "title": "Ember",
+    "year": 2016,
+    "runtime": 109,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Turkey"
+    ],
+    "studios": [
+      "Mavi Film"
+    ]
+  },
+  {
+    "id": 710277,
+    "title": "Life",
+    "year": 2023,
+    "runtime": 193,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Bulgaria",
+      "Turkey"
+    ],
+    "studios": [
+      "Mavi Film",
+      "Klas Film"
+    ]
+  },
+  {
+    "id": 404,
+    "title": "The Straight Story",
+    "year": 1999,
+    "runtime": 112,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "United States of America",
+      "United Kingdom",
+      "France"
+    ],
+    "studios": [
+      "Les Films Alain Sarde",
+      "Picture Factory",
+      "Le Studio Canal+",
+      "Film4 Productions"
+    ]
+  },
+  {
+    "id": 1018,
+    "title": "Mulholland Drive",
+    "year": 2001,
+    "runtime": 147,
+    "genres": [
+      "Thriller",
+      "Drama",
+      "Mystery"
+    ],
+    "countries": [
+      "France",
+      "United States of America"
+    ],
+    "studios": [
+      "StudioCanal",
+      "Les Films Alain Sarde",
+      "Asymmetrical Productions",
+      "Babbo"
+    ]
+  },
+  {
+    "id": 483,
+    "title": "Wild at Heart",
+    "year": 1990,
+    "runtime": 125,
+    "genres": [
+      "Crime",
+      "Thriller",
+      "Romance"
+    ],
+    "countries": [
+      "United States of America",
+      "Germany"
+    ],
+    "studios": [
+      "PolyGram Filmed Entertainment",
+      "Propaganda Films",
+      "PolyGram Filmproduktion"
+    ]
+  },
+  {
+    "id": 638,
+    "title": "Lost Highway",
+    "year": 1997,
+    "runtime": 134,
+    "genres": [
+      "Drama",
+      "Thriller",
+      "Mystery"
+    ],
+    "countries": [
+      "France",
+      "United States of America"
+    ],
+    "studios": [
+      "CiBy 2000",
+      "Asymmetrical Productions"
+    ]
+  },
+  {
+    "id": 1730,
+    "title": "Inland Empire",
+    "year": 2006,
+    "runtime": 180,
+    "genres": [
+      "Horror",
+      "Thriller",
+      "Mystery",
+      "Drama",
+      "Fantasy"
+    ],
+    "countries": [
+      "United States of America",
+      "France",
+      "Poland"
+    ],
+    "studios": [
+      "Absurda",
+      "StudioCanal",
+      "Camerimage Film",
+      "Asymmetrical Productions",
+      "Fundacja Tumult"
+    ]
+  },
+  {
+    "id": 793,
+    "title": "Blue Velvet",
+    "year": 1986,
+    "runtime": 120,
+    "genres": [
+      "Mystery",
+      "Thriller",
+      "Crime"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "DEG",
+      "Metro-Goldwyn-Mayer"
+    ]
+  },
+  {
+    "id": 841,
+    "title": "Dune",
+    "year": 1984,
+    "runtime": 136,
+    "genres": [
+      "Action",
+      "Science Fiction",
+      "Adventure"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "The De Laurentiis Company"
+    ]
+  },
+  {
+    "id": 1923,
+    "title": "Twin Peaks: Fire Walk with Me",
+    "year": 1992,
+    "runtime": 135,
+    "genres": [
+      "Drama",
+      "Mystery",
+      "Horror"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "CiBy Pictures",
+      "Twin Peaks Productions"
+    ]
+  },
+  {
+    "id": 1955,
+    "title": "The Elephant Man",
+    "year": 1980,
+    "runtime": 124,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "countries": [
+      "United States of America",
+      "United Kingdom"
+    ],
+    "studios": [
+      "Brooksfilms"
+    ]
+  },
+  {
+    "id": 24007,
+    "title": "More Things That Happened",
+    "year": 2007,
+    "runtime": 75,
+    "genres": [
+      "Horror",
+      "Drama"
+    ],
+    "countries": [
+      "France",
+      "Poland",
+      "United States of America"
+    ],
+    "studios": [
+      "Absurda",
+      "Asymmetrical Productions"
+    ]
+  },
+  {
+    "id": 36108,
+    "title": "To Each His Own Cinema",
+    "year": 2007,
+    "runtime": 100,
+    "genres": [
+      "Comedy",
+      "Drama"
+    ],
+    "countries": [
+      "France"
+    ],
+    "studios": [
+      "Elzévir Films",
+      "StudioCanal",
+      "ARTE"
+    ]
+  },
+  {
+    "id": 48336,
+    "title": "Lumière & Company",
+    "year": 1995,
+    "runtime": 88,
+    "genres": [
+      "Drama",
+      "Documentary"
+    ],
+    "countries": [
+      "France",
+      "Denmark",
+      "Spain",
+      "Sweden"
+    ],
+    "studios": [
+      "Cinétévé",
+      "La Sept-Arte",
+      "Igeldo Komunikazioa S.L.",
+      "Søren Stærmose"
+    ]
+  },
+  {
+    "id": 148073,
+    "title": "Eraserhead Stories",
+    "year": 2001,
+    "runtime": 85,
+    "genres": [
+      "Documentary"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": []
+  },
+  {
+    "id": 284215,
+    "title": "Duran Duran: Unstaged",
+    "year": 2014,
+    "runtime": 112,
+    "genres": [
+      "Music",
+      "Documentary"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "American Express"
+    ]
+  },
+  {
+    "id": 284457,
+    "title": "Twin Peaks: The Missing Pieces",
+    "year": 2014,
+    "runtime": 91,
+    "genres": [
+      "Thriller",
+      "Drama",
+      "Mystery",
+      "Horror"
+    ],
+    "countries": [
+      "United States of America",
+      "France"
+    ],
+    "studios": [
+      "Absurda",
+      "MK2 Films",
+      "CiBy 2000"
+    ]
+  },
+  {
+    "id": 452522,
+    "title": "Twin Peaks",
+    "year": 1989,
+    "runtime": 116,
+    "genres": [
+      "Mystery",
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "Lynch/Frost Productions",
+      "Spelling Entertainment",
+      "Worldvision"
+    ]
+  },
+  {
+    "id": 985,
+    "title": "Eraserhead",
+    "year": 1977,
+    "runtime": 89,
+    "genres": [
+      "Horror",
+      "Science Fiction"
+    ],
+    "countries": [
+      "United States of America"
+    ],
+    "studios": [
+      "AFI"
+    ]
+  },
+  {
+    "id": 490,
+    "title": "The Seventh Seal",
+    "year": 1957,
+    "runtime": 96,
+    "genres": [
+      "Fantasy",
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 614,
+    "title": "Wild Strawberries",
+    "year": 1957,
+    "runtime": 91,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 797,
+    "title": "Persona",
+    "year": 1966,
+    "runtime": 84,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 10238,
+    "title": "Cries and Whispers",
+    "year": 1972,
+    "runtime": 95,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Cinematograph AB",
+      "Svenska Filminstitutet"
+    ]
+  },
+  {
+    "id": 30734,
+    "title": "Crisis",
+    "year": 1946,
+    "runtime": 93,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 11506,
+    "title": "The Silence",
+    "year": 1963,
+    "runtime": 95,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 11656,
+    "title": "The Virgin Spring",
+    "year": 1960,
+    "runtime": 90,
+    "genres": [
+      "Drama",
+      "History"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 11700,
+    "title": "Smiles of a Summer Night",
+    "year": 1955,
+    "runtime": 109,
+    "genres": [
+      "Comedy",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 12761,
+    "title": "Autumn Sonata",
+    "year": 1978,
+    "runtime": 93,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Germany",
+      "Sweden",
+      "United Kingdom"
+    ],
+    "studios": [
+      "Suede Film",
+      "Personafilm",
+      "ITC Entertainment"
+    ]
+  },
+  {
+    "id": 26372,
+    "title": "Shame",
+    "year": 1968,
+    "runtime": 104,
+    "genres": [
+      "War",
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios",
+      "Cinematograph AB"
+    ]
+  },
+  {
+    "id": 29455,
+    "title": "Winter Light",
+    "year": 1963,
+    "runtime": 80,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 29454,
+    "title": "Face to Face",
+    "year": 1976,
+    "runtime": 114,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Italy",
+      "Sweden"
+    ],
+    "studios": [
+      "DDL Cinematografica",
+      "Cinematograph AB"
+    ]
+  },
+  {
+    "id": 29453,
+    "title": "The Magician",
+    "year": 1958,
+    "runtime": 102,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 42090,
+    "title": "After the Rehearsal",
+    "year": 1984,
+    "runtime": 74,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Germany",
+      "Sweden"
+    ],
+    "studios": [
+      "Personafilm",
+      "Cinematograph AB"
+    ]
+  },
+  {
+    "id": 42152,
+    "title": "From the Life of the Marionettes",
+    "year": 1980,
+    "runtime": 104,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Germany",
+      "Austria"
+    ],
+    "studios": [
+      "Personafilm",
+      "ZDF",
+      "ORF"
+    ]
+  },
+  {
+    "id": 42602,
+    "title": "The Passion of Anna",
+    "year": 1969,
+    "runtime": 101,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios",
+      "Cinematograph AB"
+    ]
+  },
+  {
+    "id": 60899,
+    "title": "Brink of Life",
+    "year": 1958,
+    "runtime": 85,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Nordisk Tonefilm",
+      "Inter-American Productions",
+      "Jerome Balsam Films"
+    ]
+  },
+  {
+    "id": 44864,
+    "title": "The Magic Flute",
+    "year": 1975,
+    "runtime": 134,
+    "genres": [
+      "Music",
+      "Romance",
+      "Fantasy"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Sveriges Radio"
+    ]
+  },
+  {
+    "id": 64782,
+    "title": "A Lesson in Love",
+    "year": 1954,
+    "runtime": 97,
+    "genres": [
+      "Comedy",
+      "Romance",
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 65092,
+    "title": "The Rite",
+    "year": 1969,
+    "runtime": 72,
+    "genres": [
+      "TV Movie",
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Cinematograph AB",
+      "SF Studios",
+      "Personafilm"
+    ]
+  },
+  {
+    "id": 39284,
+    "title": "To Joy",
+    "year": 1950,
+    "runtime": 99,
+    "genres": [
+      "Romance",
+      "Drama",
+      "Music"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 47721,
+    "title": "Sawdust and Tinsel",
+    "year": 1953,
+    "runtime": 93,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Sandrews"
+    ]
+  },
+  {
+    "id": 47735,
+    "title": "Summer with Monika",
+    "year": 1953,
+    "runtime": 98,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 47723,
+    "title": "In the Presence of a Clown",
+    "year": 1998,
+    "runtime": 119,
+    "genres": [
+      "Drama",
+      "TV Movie"
+    ],
+    "countries": [
+      "Denmark",
+      "Germany",
+      "Italy",
+      "Norway",
+      "Sweden"
+    ],
+    "studios": [
+      "DR",
+      "Nordiska TV-Samarbetsfonden",
+      "SVT Drama",
+      "RAI"
+    ]
+  },
+  {
+    "id": 47474,
+    "title": "The Serpent's Egg",
+    "year": 1977,
+    "runtime": 120,
+    "genres": [
+      "Mystery",
+      "Drama",
+      "Thriller"
+    ],
+    "countries": [
+      "Germany",
+      "United States of America"
+    ],
+    "studios": [
+      "ZDF",
+      "Bavaria Film",
+      "The De Laurentiis Company",
+      "Rialto Film"
+    ]
+  },
+  {
+    "id": 48145,
+    "title": "The Devil's Eye",
+    "year": 1960,
+    "runtime": 88,
+    "genres": [
+      "Comedy",
+      "Fantasy",
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 47473,
+    "title": "Summer Interlude",
+    "year": 1951,
+    "runtime": 96,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 18333,
+    "title": "Hour of the Wolf",
+    "year": 1968,
+    "runtime": 88,
+    "genres": [
+      "Drama",
+      "Horror"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 68291,
+    "title": "Music in Darkness",
+    "year": 1948,
+    "runtime": 87,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Terrafilm"
+    ]
+  },
+  {
+    "id": 69544,
+    "title": "Waiting Women",
+    "year": 1952,
+    "runtime": 104,
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 51141,
+    "title": "Port of Call",
+    "year": 1948,
+    "runtime": 93,
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 51143,
+    "title": "Thirst",
+    "year": 1949,
+    "runtime": 85,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 55650,
+    "title": "Saraband",
+    "year": 2003,
+    "runtime": 120,
+    "genres": [
+      "TV Movie",
+      "Drama"
+    ],
+    "countries": [
+      "Austria",
+      "Denmark",
+      "Finland",
+      "Germany",
+      "Italy",
+      "Norway",
+      "Sweden"
+    ],
+    "studios": [
+      "SVT",
+      "DR",
+      "NRK",
+      "RAI",
+      "ZDF",
+      "YLE",
+      "ORF",
+      "Network Movie"
+    ]
+  },
+  {
+    "id": 97211,
+    "title": "Dreams",
+    "year": 1955,
+    "runtime": 88,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Sandrews"
+    ]
+  },
+  {
+    "id": 105254,
+    "title": "The Touch",
+    "year": 1971,
+    "runtime": 115,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden",
+      "United States of America"
+    ],
+    "studios": [
+      "ABC Pictures",
+      "Cinematograph AB"
+    ]
+  },
+  {
+    "id": 96067,
+    "title": "It Rains on Our Love",
+    "year": 1946,
+    "runtime": 95,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Sveriges Folkbiografer"
+    ]
+  },
+  {
+    "id": 96118,
+    "title": "All These Women",
+    "year": 1964,
+    "runtime": 80,
+    "genres": [
+      "Comedy"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  },
+  {
+    "id": 106122,
+    "title": "A Ship to India",
+    "year": 1947,
+    "runtime": 96,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Sveriges Folkbiografer"
+    ]
+  },
+  {
+    "id": 133919,
+    "title": "Scenes from a Marriage",
+    "year": 1974,
+    "runtime": 169,
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Cinematograph AB"
+    ]
+  },
+  {
+    "id": 113653,
+    "title": "Prison",
+    "year": 1949,
+    "runtime": 75,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "Terrafilm"
+    ]
+  },
+  {
+    "id": 5961,
+    "title": "Fanny and Alexander",
+    "year": 1982,
+    "runtime": 188,
+    "genres": [
+      "Fantasy",
+      "Drama",
+      "Mystery"
+    ],
+    "countries": [
+      "Sweden",
+      "Germany",
+      "France"
+    ],
+    "studios": [
+      "Cinematograph AB",
+      "Svenska Filminstitutet",
+      "SVT",
+      "Gaumont",
+      "Personafilm",
+      "Tobis"
+    ]
+  },
+  {
+    "id": 11602,
+    "title": "Through a Glass Darkly",
+    "year": 1961,
+    "runtime": 91,
+    "genres": [
+      "Drama"
+    ],
+    "countries": [
+      "Sweden"
+    ],
+    "studios": [
+      "SF Studios"
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+fetch_filmography.py scriptinde bir sorun var. TMDb'de "Ingmar Bergman" araması yanlış kişiyi döndürmüş (ID=5100320, 0 film). Gerçek yönetmen Ingmar Bergman'ın TMDb ID'si 6648.
+İki şeyi düzelt:
+
+search_person fonksiyonunda, arama sonuçlarından sadece ilk sonucu almak yerine, known_for_department == "Directing" olanı tercih et. Bu, aynı isimde birden fazla kişi olduğunda doğru yönetmeni seçmemizi sağlar.
+Scripti sadece Bergman için tekrar çalıştırabilecek bir mekanizma ekle (veya basitçe sadece Bergman'ı tekrar çalıştır ve mevcut JSON dosyalarına ekle/merge et).

@@ -1,0 +1,23 @@
+Veri Çekme Planı
+Script şu sırayla çalışacak:
+
+Yönetmen ID'lerini bul — TMDb'de her kişinin bir ID'si var, isimle arama yapıp ID'leri alacağız
+Filmografiyi çek — Her yönetmenin yönettiği filmleri al
+Filtrele — runtime ve vote_count filtresi uygula
+Her film için detay çek — crew (DP, besteci, ses tasarımcısı), cast (ilk 5-10 oyuncu), genre, production company, country
+CSV/JSON olarak kaydet — Memgraph'a yüklemek için
+
+
+-----
+
+TMDb API — Bilmen Gerekenler
+Kullanacağımız 3 temel endpoint:
+# 1. Kişi arama (yönetmen ID'si bulmak için)
+GET /search/person?query=Kubrick
+
+# 2. Kişinin filmografisi
+GET /person/{person_id}/movie_credits
+
+# 3. Film detayı (crew, cast, genre, country)
+GET /movie/{movie_id}?append_to_response=credits
+append_to_response=credits parametresi çok kullanışlı — film detayı ile birlikte crew ve cast bilgisini tek bir istekte getirir. Bu da API çağrısı sayısını yarıya indirir.

@@ -1,0 +1,26 @@
+cinema-graph projesinde scripts/fetch_filmography.py scriptini yaz.
+Amaç: 14 seed yönetmenin filmografisini TMDb API'den çekip, her film için crew ve cast bilgilerini topla ve data/ klasörüne JSON olarak kaydet.
+Seed yönetmenler: Tarkovsky, Kubrick, Bergman, Woody Allen, Hitchcock, Fellini, Kurosawa, Jean Renoir, David Fincher, Tarantino, Paul Thomas Anderson, Nuri Bilge Ceylan, Zeki Demirkubuz, David Lynch
+Teknik detaylar:
+
+API key .env dosyasından python-dotenv ile okunacak
+TMDb API v3 kullanılacak (base URL: https://api.themoviedb.org/3)
+Endpointler: /search/person, /person/{id}/movie_credits, /movie/{id}?append_to_response=credits
+Filtre: runtime >= 60 ve vote_count >= 20 (seed yönetmen filmleri için)
+Her film için şu crew rollerini çek: Director, Director of Photography, Original Music Composer, Sound Designer, Editor
+Her film için ilk 10 cast üyesini çek
+Film bilgilerinden genre, production_companies ve production_countries bilgisini al
+Rate limiting: istekler arasında 0.25 saniye bekle (TMDb limiti aşmamak için)
+Çıktı: data/films.json, data/persons.json, data/relationships.json olarak kaydet
+Her dosyada ne olacağı:
+
+persons.json: tüm kişiler (id, name, roles listesi — ör: ["Director", "Actor"])
+films.json: tüm filmler (id, title, year, runtime, genres, countries, studio)
+relationships.json: tüm ilişkiler (person_id, film_id, relationship_type, extras — ör: karakter adı)
+
+
+Logging ekle, hangi yönetmenin filmografisinin çekildiğini ve kaç film bulunduğunu logla
+Hata yönetimi: API hatalarında retry (3 deneme), başarısız olanları logla ve atla
+
+-------
+Bu prompt'u Claude Code'a verdiğinde sana çalışan bir script üretecektir. Scripti çalıştırdıktan sonra data/ klasöründeki JSON dosyalarını birlikte inceleriz ve Faz 2'ye (Memgraph'a yükleme) geçeriz.

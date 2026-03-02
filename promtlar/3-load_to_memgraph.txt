@@ -1,0 +1,13 @@
+scripts/load_to_memgraph.py scriptini yaz.
+Basit bir script olsun. neo4j Python driver kullan (pip install neo4j — Memgraph bunu destekler).
+Bağlantı: bolt://localhost:7687, auth yok (auth=None).
+Adımlar:
+
+DB'yi temizle: MATCH (n) DETACH DELETE n
+data/films.json oku, her film için CREATE (:Film {tmdb_id: id, title: title, year: year, runtime: runtime}) çalıştır
+data/persons.json oku, her kişi için CREATE (:Person {tmdb_id: id, name: name}) çalıştır
+data/relationships.json oku, her ilişki için MATCH + CREATE ile bağla
+Genre, Studio, Country node'larını films.json'daki ilgili alanlardan oluştur ve filmlere bağla
+Sonunda toplam node ve relationship sayısını logla
+
+Batch kullanmana gerek yok, tek tek insert yeterli. 3000 node ve 5000 ilişki için performans sorunu olmaz.
