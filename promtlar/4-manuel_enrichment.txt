@@ -1,0 +1,46 @@
+Bağlam: MEMGRAPH_CONTEXT.md dosyasını oku.
+scripts/load_enrichment.py scriptini yaz.
+Amaç: Memgraph'a manuel zenginleştirme verilerini yükle — Movement node'ları, INFLUENCED_BY ilişkileri ve dış Person'lar.
+Bağlantı: bolt://localhost:7687, auth yok, neo4j Python driver.
+Mevcut veriyi silme! Sadece ekleme yap (MERGE kullan).
+1. Movement node'ları ve yönetmen bağlantıları:
+Andrei Tarkovsky → Soviet Poetic Cinema
+Stanley Kubrick → New Hollywood
+Ingmar Bergman → Scandinavian Art Cinema
+Woody Allen → New Hollywood
+Alfred Hitchcock → Classical Hollywood, British Cinema
+Federico Fellini → Italian Neorealism, Italian Art Cinema
+Akira Kurosawa → Japanese Golden Age Cinema
+Jean Renoir → French Poetic Realism
+David Fincher → Post-Classical Hollywood
+Quentin Tarantino → Post-Modern Cinema
+Paul Thomas Anderson → Post-Classical Hollywood
+Nuri Bilge Ceylan → New Turkish Cinema
+Zeki Demirkubuz → New Turkish Cinema
+David Lynch → Surrealist Cinema
+İlişki: (Person)-[:PART_OF_MOVEMENT]->(Movement)
+Movement node: (:Movement {name: "..."})
+2. Dış Person'lar ekle:
+Robert Bresson — role: Director
+Fyodor Dostoevsky — role: Writer
+MERGE (:Person {name: "Robert Bresson"}) şeklinde, tmdb_id olmadan.
+3. INFLUENCED_BY ilişkileri:
+Andrei Tarkovsky → Nuri Bilge Ceylan
+Ingmar Bergman → Andrei Tarkovsky
+Ingmar Bergman → Woody Allen
+Akira Kurosawa → Federico Fellini
+Jean Renoir → Federico Fellini
+Alfred Hitchcock → David Lynch
+Alfred Hitchcock → David Fincher
+Federico Fellini → David Lynch
+Stanley Kubrick → Paul Thomas Anderson
+Stanley Kubrick → David Fincher
+Robert Bresson → Andrei Tarkovsky
+Fyodor Dostoevsky → Zeki Demirkubuz
+İlişki yönü: (etkilenen)-[:INFLUENCED_BY]->(etkileyen)
+Yani: (Nuri Bilge Ceylan)-[:INFLUENCED_BY]->(Andrei Tarkovsky)
+4. Sonunda doğrulama sorguları çalıştır ve logla:
+
+Toplam Movement node sayısı
+Toplam INFLUENCED_BY ilişki sayısı
+Toplam PART_OF_MOVEMENT ilişki sayısı

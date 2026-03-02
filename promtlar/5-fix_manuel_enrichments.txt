@@ -1,0 +1,22 @@
+İki iş var:
+1. explainability/data_exp/influenced_by_sources.md dosyasını oluştur:
+Bu dosya, graph veritabanındaki INFLUENCED_BY ilişkilerinin kaynaklarını ve doğrulama durumlarını içerecek. Her ilişki için şu bilgileri yaz:
+İlişkiDurumKaynak(Nuri Bilge Ceylan)-[:INFLUENCED_BY]->(Andrei Tarkovsky)✅ DoğrulandıCeylan: "Gençliğimde Tarkovsky'den derinden etkilendim" — Beijing Masterclass (bjiff.com). BFI: Tarkovsky, Ceylan'ın en belirgin etkisi olarak anılır. Letterboxd/Picturehouse: "Tarkovsky, Bresson, Antonioni, Ozu and Bergman are among Ceylan's most obvious and acknowledged influences."(Woody Allen)-[:INFLUENCED_BY]->(Ingmar Bergman)✅ DoğrulandıAllen'ın Hollywood Reporter röportajı: Bergman etkisini açıkça kabul eder. BBC belgeseli (Mark Kermode röportajı). Criterion Channel: kısa belgesel. TIME dergisi röportajı (2007).(Andrei Tarkovsky)-[:INFLUENCED_BY]->(Ingmar Bergman)✅ DoğrulandıTarkovsky'nin 1972 favori 10 film listesinde 3 Bergman filmi (Winter Light, Wild Strawberries, Persona). Son filmi The Sacrifice'ı Bergman'ın ekibiyle (Sven Nykvist, Erland Josephson) çekti. BFI: "Bergman'ın ses ve sessizlik kullanımından doğrudan etkilendi."(Andrei Tarkovsky)-[:INFLUENCED_BY]->(Robert Bresson)✅ DoğrulandıTarkovsky, "Diary of a Country Priest"ı gördüğü en iyi film olarak adlandırdı. BFI listesi: Bresson, Tarkovsky'nin en büyük etkilerinden biri.(David Fincher)-[:INFLUENCED_BY]->(Alfred Hitchcock)✅ DoğrulandıWikipedia: Fincher, Hitchcock'u major influences listesinde sayar. The Game filmini "Hitchcock tarzı gerilim" olarak tanımlar. Screen Rant: "pretty much every suspense filmmaker worth their salt was inspired by Hitchcock."(David Fincher)-[:INFLUENCED_BY]->(Stanley Kubrick)✅ DoğrulandıWikipedia: Fincher, Kubrick'u major influences listesinde sayar. Indie Film Hustle: "Kubrick, Fincher'ın prime influence'ı." Far Out Magazine: "Dubbed as the Kubrick of our time."(Paul Thomas Anderson)-[:INFLUENCED_BY]->(Stanley Kubrick)✅ DoğrulandıPTA, Entertainment Weekly röportajı: "Kubrick'in müzik kullanımına bir şekilde borçlu olmayan bir şey yapmak çok zor." Wikipedia (Influence of Stanley Kubrick).(David Lynch)-[:INFLUENCED_BY]->(Federico Fellini)✅ DoğrulandıLynch: "Fellini sinema tarihinin en büyük yönetmenlerinden, 8½ belki de en sevdiğim filmi." Far Out Magazine, IndieWire, Open Culture röportajları.(David Lynch)-[:INFLUENCED_BY]->(Alfred Hitchcock)✅ DoğrulandıLynch, Rear Window'u "mükemmel 5 filmden biri" olarak listeler. Toronto Film Magazine, Screen Rant.(Zeki Demirkubuz)-[:INFLUENCED_BY]->(Fyodor Dostoevsky)✅ DoğrulandıCINEJ akademik makale (2025): Dostoevsky ve Camus etkisi analiz edilmiş. MUBI: "Dostoevsky-themed The Third Page." Doğrudan uyarlamalar: Yeraltından Notlar, Suç ve Ceza (Bekleme Odası).(Nuri Bilge Ceylan)-[:INFLUENCED_BY]->(Robert Bresson)✅ DoğrulandıBFI: "Tarkovsky, Bresson, Antonioni, Ozu and Bergman are among Ceylan's most obvious and acknowledged influences." Letterboxd/Picturehouse guide.(Nuri Bilge Ceylan)-[:INFLUENCED_BY]->(Ingmar Bergman)✅ DoğrulandıBFI: Ceylan'ın Sight & Sound 2012 anketinde Bergman'ı listelemesi. Encyclopedia.com: "influenced by Bergman."(Nuri Bilge Ceylan)-[:INFLUENCED_BY]->(Anton Chekhov)✅ DoğrulandıVariety röportajı (2014): Ceylan: "Ruhum Rus ruhuna yakın. Chekhov'un etkisi altındayım." Winter Sleep senaryosu Chekhov öykülerinden uyarlanmış. Senses of Cinema röportajı.
+Çıkarılan ilişkiler:
+İlişkiSebep(Federico Fellini)-[:INFLUENCED_BY]->(Akira Kurosawa)Karşılıklı hayranlık var ama doğrudan "etkilenme" için yeterli kanıt yok. Fellini, Kurosawa'yı övmüştür ama sinematik etki belgelenmemiş.(Federico Fellini)-[:INFLUENCED_BY]->(Jean Renoir)Web aramasında spesifik kanıt bulunamadı.
+Dosya formatı: Markdown, başlıklar, tablo ve her ilişki için kısa açıklama + URL kaynaklar.
+2. scripts/load_enrichment.py scriptini güncelle veya yeni bir scripts/update_enrichment.py scripti yaz:
+Memgraph'ta şu değişiklikleri yap:
+Ekle:
+
+Dış Person: Anton Chekhov (role: Writer)
+(Nuri Bilge Ceylan)-[:INFLUENCED_BY]->(Robert Bresson)
+(Nuri Bilge Ceylan)-[:INFLUENCED_BY]->(Ingmar Bergman)
+(Nuri Bilge Ceylan)-[:INFLUENCED_BY]->(Anton Chekhov)
+
+Çıkar:
+
+(Federico Fellini)-[:INFLUENCED_BY]->(Akira Kurosawa)
+(Federico Fellini)-[:INFLUENCED_BY]->(Jean Renoir)
+
+Not: MERGE kullan, mevcut veriyi silme. Çıkarma işlemi için MATCH ... DELETE kullan. Sonunda doğrulama sorgusu çalıştır.
