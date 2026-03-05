@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinegraph Obscura — Interactive Cinema Network</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08080c;--surface:#111118;--card:#18181f;--border:#252532;--gold:#e2b93b;--gold-glow:rgba(226,185,59,0.08);--orange:#f06830;--blue:#5b8def;--green:#3dc98a;--purple:#b06de8;--cyan:#4ecdc4;--text:#e5e3df;--text-sec:#9a98a8;--text-dim:#5e5c6e;--font-display:'Instrument Serif',serif;--font-body:'Source Sans 3',sans-serif;--font-mono:'Geist Mono',monospace}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:var(--font-body);overflow:hidden;height:100vh}::selection{background:var(--gold);color:var(--bg)}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+#gc{position:absolute;top:0;left:0;width:100%;height:100%;cursor:grab}#gc:active{cursor:grabbing}
+
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:linear-gradient(180deg,rgba(8,8,12,0.95)0%,rgba(8,8,12,0.7)80%,transparent 100%);pointer-events:none}
+.hdr>*{pointer-events:auto}.hdr-l{display:flex;align-items:center;gap:12px}
+.hdr-l h1{font-family:var(--font-display);font-size:1.4rem;font-weight:400}.hdr-l h1 em{color:var(--gold);font-style:italic}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:var(--card);border:1px solid var(--border);border-radius:100px;font-family:var(--font-mono);font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em}
+.badge .dot{width:5px;height:5px;background:var(--green);border-radius:50%;animation:p 2s infinite}@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+.mtabs{display:flex;gap:4px}.mt{padding:6px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);cursor:pointer;transition:all .2s}
+.mt:hover{border-color:var(--gold);color:var(--text-sec)}.mt.act{border-color:var(--gold);color:var(--gold);background:var(--gold-glow)}
+
+.ctrl{position:fixed;top:64px;left:16px;z-index:100;width:250px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.5)}
+.ctrl-h{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
+.ctrl-h h3{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim)}
+.ctrl-b{padding:12px 14px;display:flex;flex-direction:column;gap:11px;max-height:calc(100vh - 180px);overflow-y:auto}.ctrl-b.hid{display:none}
+.cg label{display:block;font-family:var(--font-mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-bottom:5px}
+.si{width:100%;padding:7px 10px;background:var(--card);border:1px solid var(--border);border-radius:7px;color:var(--text);font-family:var(--font-body);font-size:12px;outline:none;transition:border-color .2s}
+.si:focus{border-color:var(--gold)}.si::placeholder{color:var(--text-dim)}
+.chips{display:flex;flex-wrap:wrap;gap:4px}.chip{padding:4px 8px;background:var(--card);border:1px solid var(--border);border-radius:5px;font-size:10px;font-weight:500;cursor:pointer;transition:all .2s;user-select:none;color:var(--text-sec)}
+.chip:hover{border-color:#3a3a4e}.chip.act{border-color:var(--gold);color:var(--gold);background:var(--gold-glow)}
+.chip.bc.act{border-color:var(--cyan);color:var(--cyan);background:rgba(78,205,196,.08)}
+.chip[data-l="films"].act{border-color:#e85555;color:#e85555;background:rgba(232,85,85,.08)}
+.chip[data-l="actors"].act{border-color:#f06830;color:#f06830;background:rgba(240,104,48,.08)}
+.chip[data-l="studios"].act{border-color:#3dc98a;color:#3dc98a;background:rgba(61,201,138,.08)}
+.sr{display:flex;align-items:center;gap:8px}.sr input[type=range]{flex:1;accent-color:var(--gold);height:3px}
+.sr .sv{font-family:var(--font-mono);font-size:10px;color:var(--text-sec);min-width:28px;text-align:right}
+.br{display:flex;gap:5px}.bn{flex:1;padding:6px;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text-sec);font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;text-align:center;transition:all .2s}
+.bn:hover{border-color:var(--gold);color:var(--gold)}.bn.act{background:var(--gold-glow);border-color:var(--gold);color:var(--gold)}
+
+.dp{position:fixed;top:64px;right:16px;z-index:100;width:280px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.5);display:none}
+.dp.vis{display:block;animation:si .25s ease-out}@keyframes si{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:translateX(0)}}
+.dp-h{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-bottom:1px solid var(--border)}
+.dp-h h2{font-family:var(--font-display);font-size:1.1rem;font-weight:400}.dp-h .dc{background:none;border:none;color:var(--text-dim);font-size:16px;cursor:pointer;padding:2px}.dp-h .dc:hover{color:var(--text)}
+.dp-b{padding:13px 14px;max-height:calc(100vh - 180px);overflow-y:auto}
+.ds{margin-bottom:13px}.ds h4{font-family:var(--font-mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-bottom:5px}
+.dtg{display:inline-flex;padding:3px 7px;margin:2px;border-radius:4px;font-size:10px;font-weight:500}
+.fr{display:flex;justify-content:space-between;align-items:baseline;padding:3px 0;font-size:11px;border-bottom:1px solid rgba(37,37,50,.4)}
+.fr .ft{color:var(--text);flex:1}.fr .fy{color:var(--text-dim);font-family:var(--font-mono);font-size:10px;margin:0 6px}.fr .frt{color:var(--gold);font-family:var(--font-mono);font-size:10px;font-weight:600}
+.il{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-sec);padding:2px 0}.ia{color:var(--gold);font-family:var(--font-mono)}
+.strow{display:flex;justify-content:space-between;padding:3px 0;font-size:11px;border-bottom:1px solid rgba(37,37,50,.3)}.strow .sk{color:var(--text-sec)}.strow .svl{font-family:var(--font-mono);font-weight:600}
+
+.po{position:fixed;top:64px;left:50%;transform:translateX(-50%);z-index:110;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 18px;display:none;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.po.vis{display:flex;align-items:center;gap:8px;animation:si .2s}
+.po-l{font-family:var(--font-mono);font-size:10px;color:var(--text-dim);text-transform:uppercase}
+.po-n{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:500}.po-a{color:var(--orange);font-family:var(--font-mono)}
+.po-c{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:14px;margin-left:8px}
+
+.tbar{position:fixed;bottom:50px;left:16px;right:190px;z-index:90;background:rgba(17,17,24,.9);border:1px solid var(--border);border-radius:8px;padding:10px 16px;backdrop-filter:blur(8px);display:none}
+.tbar.vis{display:block}
+.tbar label{font-family:var(--font-mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim)}
+.tl-r{display:flex;align-items:center;gap:10px;margin-top:5px}.tl-r input[type=range]{flex:1;accent-color:var(--gold)}
+.tl-y{font-family:var(--font-mono);font-size:16px;color:var(--gold);font-weight:600;min-width:45px}
+.tl-p{padding:5px 12px;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text-sec);font-family:var(--font-mono);font-size:10px;cursor:pointer}.tl-p:hover{border-color:var(--gold);color:var(--gold)}
+
+.mm{position:fixed;bottom:16px;right:16px;z-index:90;width:160px;height:100px;background:rgba(17,17,24,.85);border:1px solid var(--border);border-radius:8px;overflow:hidden;backdrop-filter:blur(4px)}
+.mm canvas{width:100%;height:100%}
+
+.lgd{position:fixed;bottom:16px;left:16px;z-index:90;display:flex;flex-wrap:wrap;gap:10px;padding:10px 14px;background:rgba(17,17,24,.9);border:1px solid var(--border);border-radius:8px;backdrop-filter:blur(8px)}
+.lgd-i{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-sec)}.lgd-d{width:8px;height:8px;border-radius:50%}
+
+.tt{position:fixed;z-index:200;padding:7px 12px;background:var(--card);border:1px solid var(--border);border-radius:7px;font-size:11px;color:var(--text);pointer-events:none;display:none;box-shadow:0 8px 32px rgba(0,0,0,.4);max-width:200px}
+.tt .tn{font-weight:600;margin-bottom:1px}.tt .tm{font-size:10px;color:var(--text-sec)}
+</style>
+</head>
+<body>
+<canvas id="gc"></canvas>
+<div class="hdr">
+  <div class="hdr-l"><h1>Cinegraph <em>Obscura</em></h1><span class="badge"><span class="dot"></span>v2</span></div>
+  <div class="mtabs">
+    <div class="mt act" onclick="setMode('explore')">Explore</div>
+    <div class="mt" onclick="setMode('cluster')">Cluster</div>
+    <div class="mt" onclick="setMode('path')">Pathfinder</div>
+    <div class="mt" onclick="setMode('timeline')">Timeline</div>
+  </div>
+</div>
+<div class="ctrl">
+  <div class="ctrl-h" onclick="document.getElementById('cb').classList.toggle('hid')"><h3>Controls</h3><span style="color:var(--text-dim);font-size:12px">▼</span></div>
+  <div class="ctrl-b" id="cb">
+    <div class="cg"><label>Search</label><input class="si" id="sI" type="text" placeholder="Kubrick, Nykvist..."></div>
+    <div class="cg"><label>Layers</label><div class="chips">
+      <div class="chip act" data-l="directors" onclick="tL(this)">Directors</div>
+      <div class="chip act" data-l="influences" onclick="tL(this)">Influences</div>
+      <div class="chip act" data-l="movements" onclick="tL(this)">Movements</div>
+      <div class="chip bc" data-l="bridges" onclick="tL(this)">Bridges</div>
+      <div class="chip" data-l="films" onclick="tL(this)" style="--ac:#e85555">Films</div>
+      <div class="chip" data-l="actors" onclick="tL(this)" style="--ac:#f06830">Actors</div>
+      <div class="chip" data-l="studios" onclick="tL(this)" style="--ac:#3dc98a">Studios</div>
+      <div class="chip" data-l="external" onclick="tL(this)">External</div>
+    </div></div>
+    <div class="cg"><label>Physics</label><div class="sr"><input type="range" id="fS" min="0" max="100" value="45"><span class="sv" id="fV">45</span></div></div>
+    <div class="cg"><label>Distance</label><div class="sr"><input type="range" id="dS" min="80" max="400" value="170"><span class="sv" id="dV">170</span></div></div>
+    <div class="cg"><div class="br">
+      <div class="bn" onclick="resetV()">Reset</div>
+      <div class="bn" id="pB" onclick="tP()">Pause</div>
+      <div class="bn" onclick="shufflePos()">Shuffle</div>
+    </div></div>
+  </div>
+</div>
+<div class="dp" id="dp"><div class="dp-h"><h2 id="dn"></h2><button class="dc" onclick="cD()">✕</button></div><div class="dp-b" id="db"></div></div>
+<div class="po" id="po"><span class="po-l">Shortest path:</span><div class="po-n" id="pN"></div><button class="po-c" onclick="cP()">✕</button></div>
+<div class="tbar" id="tB"><label>Timeline filter</label><div class="tl-r"><span class="tl-y" id="tY">2025</span><input type="range" id="tS" min="1925" max="2025" value="2025" step="1"><button class="tl-p" id="tPl" onclick="tTP()">▶ Play</button></div></div>
+<div class="lgd" id="lgd"></div>
+<div class="mm"><canvas id="mc" width="320" height="200"></canvas></div>
+<div class="tt" id="tt"><div class="tn"></div><div class="tm"></div></div>
+
+<script>
+// ═══════════ DATA ═══════════
+const D=[
+{n:"Alfred Hitchcock",f:54,y1:1925,y2:1976,c:["UK","USA"],top:[{t:"Psycho",y:1960,r:8.41},{t:"Rear Window",y:1954,r:8.34},{t:"Vertigo",y:1958,r:8.15},{t:"Dial M for Murder",y:1954,r:8.0},{t:"North by Northwest",y:1959,r:7.97}]},
+{n:"Woody Allen",f:52,y1:1966,y2:2023,c:["USA"],top:[{t:"Annie Hall",y:1977,r:7.73},{t:"Manhattan",y:1979,r:7.72},{t:"Midnight in Paris",y:2011,r:7.52},{t:"Hannah and Her Sisters",y:1986,r:7.5}]},
+{n:"Jean-Luc Godard",f:47,y1:1960,y2:2018,c:["France","Switzerland"],top:[]},
+{n:"Ingmar Bergman",f:42,y1:1946,y2:2003,c:["Sweden"],top:[{t:"The Seventh Seal",y:1957,r:8.16},{t:"Persona",y:1966,r:8.14},{t:"Wild Strawberries",y:1957,r:8.08},{t:"Scenes from a Marriage",y:1974,r:8.06},{t:"Autumn Sonata",y:1978,r:7.96}]},
+{n:"Spike Lee",f:35,y1:1986,y2:2025,c:["USA"],top:[]},
+{n:"Martin Scorsese",f:34,y1:1968,y2:2023,c:["USA"],top:[{t:"GoodFellas",y:1990,r:8.45},{t:"Shutter Island",y:2010,r:8.2},{t:"The Departed",y:2006,r:8.16},{t:"Taxi Driver",y:1976,r:8.13},{t:"The Wolf of Wall Street",y:2013,r:8.03}]},
+{n:"Wim Wenders",f:33,y1:1973,y2:2023,c:["Germany"],top:[]},
+{n:"Yasujirō Ozu",f:29,y1:1929,y2:1962,c:["Japan"],top:[]},
+{n:"Akira Kurosawa",f:29,y1:1943,y2:1993,c:["Japan"],top:[{t:"Seven Samurai",y:1954,r:8.45},{t:"Ikiru",y:1952,r:8.31},{t:"High and Low",y:1963,r:8.3},{t:"Red Beard",y:1965,r:8.14},{t:"Yojimbo",y:1961,r:8.09}]},
+{n:"Jean Renoir",f:25,y1:1925,y2:1962,c:["France"],top:[]},
+{n:"Pedro Almodóvar",f:23,y1:1980,y2:2024,c:["Spain"],top:[]},
+{n:"Federico Fellini",f:23,y1:1950,y2:1990,c:["Italy"],top:[{t:"8½",y:1963,r:8.11},{t:"La Dolce Vita",y:1960,r:8.04},{t:"Nights of Cabiria",y:1957,r:7.99},{t:"La Strada",y:1954,r:7.91},{t:"Amarcord",y:1973,r:7.89}]},
+{n:"François Truffaut",f:22,y1:1959,y2:1983,c:["France"],top:[]},
+{n:"Joel Coen",f:21,y1:1985,y2:2021,c:["USA"],top:[]},
+{n:"Lars von Trier",f:20,y1:1984,y2:2018,c:["Denmark"],top:[{t:"Dancer in the Dark",y:2000,r:7.86},{t:"Dogville",y:2003,r:7.76},{t:"Breaking the Waves",y:1996,r:7.5}]},
+{n:"Michelangelo Antonioni",f:18,y1:1950,y2:2004,c:["Italy"],top:[]},
+{n:"Abbas Kiarostami",f:17,y1:1974,y2:2018,c:["Iran"],top:[{t:"Close-Up",y:1990,r:7.95},{t:"Where Is The Friend's House?",y:1987,r:7.89},{t:"Taste of Cherry",y:1997,r:7.7}]},
+{n:"Hirokazu Kore-eda",f:16,y1:1995,y2:2023,c:["Japan"],top:[{t:"Nobody Knows",y:2004,r:7.98},{t:"Monster",y:2023,r:7.93},{t:"Shoplifters",y:2018,r:7.85},{t:"Still Walking",y:2008,r:7.77},{t:"Like Father, Like Son",y:2013,r:7.7}]},
+{n:"David Lynch",f:15,y1:1977,y2:2014,c:["USA"],top:[{t:"The Elephant Man",y:1980,r:8.05},{t:"Mulholland Drive",y:2001,r:7.8},{t:"Blue Velvet",y:1986,r:7.61}]},
+{n:"Michael Haneke",f:14,y1:1989,y2:2017,c:["Austria","France"],top:[{t:"Amour",y:2012,r:7.76},{t:"The White Ribbon",y:2009,r:7.46},{t:"Funny Games",y:1997,r:7.31}]},
+{n:"Stanley Kubrick",f:13,y1:1953,y2:1999,c:["UK","USA"],top:[{t:"Paths of Glory",y:1957,r:8.3},{t:"The Shining",y:1980,r:8.21},{t:"A Clockwork Orange",y:1971,r:8.18},{t:"Dr. Strangelove",y:1964,r:8.13},{t:"Full Metal Jacket",y:1987,r:8.12}]},
+{n:"Quentin Tarantino",f:13,y1:1992,y2:2019,c:["USA"],top:[{t:"Pulp Fiction",y:1994,r:8.49},{t:"Inglourious Basterds",y:2009,r:8.22},{t:"Django Unchained",y:2012,r:8.19},{t:"Reservoir Dogs",y:1992,r:8.12}]},
+{n:"David Fincher",f:12,y1:1992,y2:2023,c:["USA"],top:[{t:"Fight Club",y:1999,r:8.44},{t:"Se7en",y:1995,r:8.38},{t:"Gone Girl",y:2014,r:7.89}]},
+{n:"Zeki Demirkubuz",f:12,y1:1994,y2:2023,c:["Turkey"],top:[{t:"Innocence",y:1997,r:7.68},{t:"Destiny",y:2006,r:7.4},{t:"Fate",y:2001,r:7.2}]},
+{n:"Wong Kar-Wai",f:12,y1:1988,y2:2013,c:["Hong Kong"],top:[{t:"In the Mood for Love",y:2000,r:8.09},{t:"Chungking Express",y:1994,r:7.96},{t:"Fallen Angels",y:1995,r:7.67},{t:"Happy Together",y:1997,r:7.6}]},
+{n:"Park Chan-wook",f:11,y1:2000,y2:2025,c:["South Korea"],top:[{t:"Oldboy",y:2003,r:8.24},{t:"The Handmaiden",y:2016,r:8.19},{t:"Joint Security Area",y:2000,r:7.82}]},
+{n:"Krzysztof Kieślowski",f:10,y1:1976,y2:1994,c:["Poland","France"],top:[]},
+{n:"Ethan Coen",f:10,y1:2004,y2:2018,c:["USA"],top:[]},
+{n:"Paul Thomas Anderson",f:10,y1:1997,y2:2025,c:["USA"],top:[]},
+{n:"Terrence Malick",f:10,y1:1974,y2:2019,c:["USA"],top:[]},
+{n:"Nuri Bilge Ceylan",f:9,y1:1997,y2:2023,c:["Turkey"],top:[{t:"About Dry Grasses",y:2023,r:7.66},{t:"Winter Sleep",y:2014,r:7.5},{t:"The Wild Pear Tree",y:2018,r:7.48},{t:"Once Upon a Time in Anatolia",y:2011,r:7.46},{t:"Distant",y:2002,r:7.11}]},
+{n:"Bong Joon-ho",f:9,y1:2000,y2:2025,c:["South Korea"],top:[{t:"Parasite",y:2019,r:8.5},{t:"Memories of Murder",y:2003,r:8.06},{t:"Mother",y:2009,r:7.7},{t:"Okja",y:2017,r:7.34}]},
+{n:"Andrei Tarkovsky",f:8,y1:1962,y2:1990,c:["Soviet Union","Italy","Sweden"],top:[{t:"Stalker",y:1979,r:8.1},{t:"Mirror",y:1975,r:8.0},{t:"Andrei Rublev",y:1966,r:7.96},{t:"Ivan's Childhood",y:1962,r:7.83},{t:"Solaris",y:1972,r:7.8}]},
+{n:"Semih Kaplanoğlu",f:5,y1:2007,y2:2017,c:["Turkey"],top:[]},
+{n:"Yılmaz Güney",f:3,y1:1970,y2:1983,c:["Turkey"],top:[]}
+];
+
+const INF=[
+["Nuri Bilge Ceylan","Andrei Tarkovsky"],["Terrence Malick","Andrei Tarkovsky"],["Lars von Trier","Andrei Tarkovsky"],["Semih Kaplanoğlu","Andrei Tarkovsky"],
+["Paul Thomas Anderson","Stanley Kubrick"],["David Fincher","Stanley Kubrick"],["Martin Scorsese","Stanley Kubrick"],
+["David Lynch","Alfred Hitchcock"],["David Fincher","Alfred Hitchcock"],["François Truffaut","Alfred Hitchcock"],["Park Chan-wook","Alfred Hitchcock"],["Bong Joon-ho","Alfred Hitchcock"],
+["David Lynch","Federico Fellini"],["Martin Scorsese","Federico Fellini"],["Pedro Almodóvar","Federico Fellini"],
+["Wong Kar-Wai","Michelangelo Antonioni"],["Spike Lee","Akira Kurosawa"],["Jean-Luc Godard","Akira Kurosawa"],["Bong Joon-ho","Akira Kurosawa"],
+["Hirokazu Kore-eda","Abbas Kiarostami"],["Andrei Tarkovsky","Ingmar Bergman"],["Woody Allen","Ingmar Bergman"],["Nuri Bilge Ceylan","Ingmar Bergman"],["Krzysztof Kieślowski","Ingmar Bergman"],
+["Hirokazu Kore-eda","Yasujirō Ozu"],["Andrei Tarkovsky","Robert Bresson"],["Nuri Bilge Ceylan","Robert Bresson"],["Zeki Demirkubuz","Robert Bresson"],["Michael Haneke","Robert Bresson"],
+["Zeki Demirkubuz","Fyodor Dostoevsky"],["Nuri Bilge Ceylan","Anton Chekhov"],["Lars von Trier","Carl Theodor Dreyer"]
+];
+
+const MOV=[
+["Andrei Tarkovsky","Soviet Poetic Cinema"],["Stanley Kubrick","New Hollywood"],["Woody Allen","New Hollywood"],["Martin Scorsese","New Hollywood"],["Terrence Malick","New Hollywood"],
+["Ingmar Bergman","Scandinavian Art Cinema"],["Alfred Hitchcock","Classical Hollywood"],["Alfred Hitchcock","British Cinema"],
+["Federico Fellini","Italian Neorealism"],["Federico Fellini","Italian Art Cinema"],["Akira Kurosawa","Japanese Golden Age Cinema"],["Jean Renoir","French Poetic Realism"],
+["David Fincher","Post-Classical Hollywood"],["Paul Thomas Anderson","Post-Classical Hollywood"],["Quentin Tarantino","Post-Modern Cinema"],
+["Nuri Bilge Ceylan","New Turkish Cinema"],["Zeki Demirkubuz","New Turkish Cinema"],["Yılmaz Güney","New Turkish Cinema"],["Semih Kaplanoğlu","New Turkish Cinema"],
+["David Lynch","Surrealist Cinema"],["Jean-Luc Godard","French New Wave"],["François Truffaut","French New Wave"],
+["Michelangelo Antonioni","Italian Modernism"],["Lars von Trier","Dogme 95"],["Michael Haneke","Austrian Auteur Cinema"],["Wim Wenders","New German Cinema"],
+["Pedro Almodóvar","Movida Madrileña"],["Wong Kar-Wai","Hong Kong New Wave"],["Yasujirō Ozu","Classical Japanese Cinema"],["Hirokazu Kore-eda","Classical Japanese Cinema"],
+["Abbas Kiarostami","Iranian New Wave"],["Park Chan-wook","Korean New Wave"],["Bong Joon-ho","Korean New Wave"],["Spike Lee","American Independent Cinema"]
+];
+
+const EXT=["Robert Bresson","Fyodor Dostoevsky","Anton Chekhov","Carl Theodor Dreyer"];
+const BRG=[
+{n:"Sven Nykvist",role:"DP",dirs:["Ingmar Bergman","Andrei Tarkovsky","Woody Allen","Martin Scorsese","David Lynch","Spike Lee","Wim Wenders","Michael Haneke","Abbas Kiarostami"]},
+{n:"Bernard Herrmann",role:"Composer",dirs:["Alfred Hitchcock","Martin Scorsese","François Truffaut"]},
+{n:"Erland Josephson",role:"Actor",dirs:["Ingmar Bergman","Andrei Tarkovsky"]},
+{n:"Ingrid Bergman",role:"Actor",dirs:["Alfred Hitchcock","Ingmar Bergman","Jean Renoir"]},
+{n:"Paul Newman",role:"Actor",dirs:["Alfred Hitchcock","Martin Scorsese","Joel Coen"]},
+{n:"James Mason",role:"Actor",dirs:["Alfred Hitchcock","Stanley Kubrick"]},
+{n:"Allan Edwall",role:"Actor",dirs:["Ingmar Bergman","Andrei Tarkovsky"]},
+{n:"Gilbert Taylor",role:"DP",dirs:["Alfred Hitchcock","Stanley Kubrick"]},
+{n:"Tatsuya Mihashi",role:"Actor",dirs:["Akira Kurosawa","Woody Allen"]},
+{n:"Martin Landau",role:"Actor",dirs:["Alfred Hitchcock","Woody Allen"]},
+{n:"Gregory Peck",role:"Actor",dirs:["Alfred Hitchcock","Martin Scorsese"]}
+];
+const DEG={"Woody Allen":4316,"Jean-Luc Godard":3666,"Alfred Hitchcock":3510,"Ingmar Bergman":2100,"Spike Lee":1645,"Akira Kurosawa":1479,"Martin Scorsese":1428,"Wim Wenders":1320,"Yasujirō Ozu":899,"Joel Coen":777,"Jean Renoir":675,"Federico Fellini":644,"François Truffaut":594,"Pedro Almodóvar":575,"Hirokazu Kore-eda":544,"Abbas Kiarostami":544,"Lars von Trier":540,"David Lynch":465,"Michelangelo Antonioni":450,"Zeki Demirkubuz":312,"Stanley Kubrick":273,"Ethan Coen":250,"Quentin Tarantino":247,"Nuri Bilge Ceylan":243,"Michael Haneke":224,"David Fincher":180,"Wong Kar-Wai":168,"Park Chan-wook":143,"Paul Thomas Anderson":140,"Andrei Tarkovsky":136,"Terrence Malick":120,"Krzysztof Kieślowski":110,"Bong Joon-ho":108,"Semih Kaplanoğlu":28,"Yılmaz Güney":18};
+
+const FILMS={
+"Alfred Hitchcock":[{t:"Psycho",y:1960,r:8.42},{t:"Rear Window",y:1954,r:8.34},{t:"Vertigo",y:1958,r:8.15},{t:"Dial M for Murder",y:1954,r:8.0},{t:"North by Northwest",y:1959,r:7.97},{t:"Rope",y:1948,r:7.93},{t:"Rebecca",y:1940,r:7.89},{t:"Notorious",y:1946,r:7.73},{t:"Strangers on a Train",y:1951,r:7.67},{t:"Shadow of a Doubt",y:1943,r:7.5}],
+"Andrei Tarkovsky":[{t:"Stalker",y:1979,r:8.1},{t:"Mirror",y:1975,r:8.0},{t:"Andrei Rublev",y:1966,r:7.96},{t:"Ivan's Childhood",y:1962,r:7.83},{t:"Nostalgia",y:1983,r:7.8},{t:"Solaris",y:1972,r:7.8},{t:"The Sacrifice",y:1986,r:7.71}],
+"Bong Joon-ho":[{t:"Parasite",y:2019,r:8.5},{t:"Memories of Murder",y:2003,r:8.06},{t:"Mother",y:2009,r:7.7},{t:"Okja",y:2017,r:7.34},{t:"The Host",y:2006,r:6.98},{t:"Snowpiercer",y:2013,r:6.91}],
+"Stanley Kubrick":[{t:"Paths of Glory",y:1957,r:8.3},{t:"The Shining",y:1980,r:8.21},{t:"A Clockwork Orange",y:1971,r:8.18},{t:"Dr. Strangelove",y:1964,r:8.13},{t:"Full Metal Jacket",y:1987,r:8.12},{t:"2001: A Space Odyssey",y:1968,r:8.06},{t:"Barry Lyndon",y:1975,r:7.99}],
+"David Fincher":[{t:"Fight Club",y:1999,r:8.44},{t:"Se7en",y:1995,r:8.38},{t:"Gone Girl",y:2014,r:7.89},{t:"Zodiac",y:2007,r:7.53},{t:"The Social Network",y:2010,r:7.37}],
+"Nuri Bilge Ceylan":[{t:"About Dry Grasses",y:2023,r:7.66},{t:"Winter Sleep",y:2014,r:7.5},{t:"The Wild Pear Tree",y:2018,r:7.48},{t:"Once Upon a Time in Anatolia",y:2011,r:7.46},{t:"Distant",y:2002,r:7.11},{t:"Clouds of May",y:1999,r:6.93},{t:"Climates",y:2006,r:6.8},{t:"Three Monkeys",y:2008,r:6.79},{t:"The Small Town",y:1997,r:6.5}],
+"Wong Kar-Wai":[{t:"In the Mood for Love",y:2000,r:8.09},{t:"Chungking Express",y:1994,r:7.96},{t:"Fallen Angels",y:1995,r:7.67},{t:"Happy Together",y:1997,r:7.6},{t:"Days of Being Wild",y:1990,r:7.26},{t:"2046",y:2004,r:7.24}],
+"David Lynch":[{t:"The Elephant Man",y:1980,r:8.05},{t:"Mulholland Drive",y:2001,r:7.8},{t:"The Straight Story",y:1999,r:7.7},{t:"Blue Velvet",y:1986,r:7.61},{t:"Lost Highway",y:1997,r:7.54},{t:"Eraserhead",y:1977,r:7.35}],
+"Federico Fellini":[{t:"8½",y:1963,r:8.11},{t:"La Dolce Vita",y:1960,r:8.04},{t:"Nights of Cabiria",y:1957,r:7.99},{t:"La Strada",y:1954,r:7.91},{t:"Amarcord",y:1973,r:7.89},{t:"I Vitelloni",y:1953,r:7.64}],
+"Ingmar Bergman":[{t:"The Seventh Seal",y:1957,r:8.16},{t:"Persona",y:1966,r:8.14},{t:"Wild Strawberries",y:1957,r:8.08},{t:"Scenes from a Marriage",y:1974,r:8.06},{t:"Autumn Sonata",y:1978,r:7.96},{t:"Winter Light",y:1963,r:7.9},{t:"Cries and Whispers",y:1972,r:7.88},{t:"The Virgin Spring",y:1960,r:7.85},{t:"Fanny and Alexander",y:1982,r:7.79}],
+"Martin Scorsese":[{t:"GoodFellas",y:1990,r:8.45},{t:"Shutter Island",y:2010,r:8.2},{t:"The Departed",y:2006,r:8.16},{t:"Taxi Driver",y:1976,r:8.13},{t:"The Wolf of Wall Street",y:2013,r:8.03},{t:"Casino",y:1995,r:8.0},{t:"Raging Bull",y:1980,r:7.9}],
+"Park Chan-wook":[{t:"Oldboy",y:2003,r:8.24},{t:"The Handmaiden",y:2016,r:8.19},{t:"Joint Security Area",y:2000,r:7.82},{t:"Lady Vengeance",y:2005,r:7.53},{t:"Decision to Leave",y:2022,r:7.32}],
+"Akira Kurosawa":[{t:"Seven Samurai",y:1954,r:8.45},{t:"Ikiru",y:1952,r:8.31},{t:"High and Low",y:1963,r:8.3},{t:"Red Beard",y:1965,r:8.14},{t:"Yojimbo",y:1961,r:8.09},{t:"Rashomon",y:1950,r:8.04},{t:"Ran",y:1985,r:8.04},{t:"Throne of Blood",y:1957,r:7.92}],
+"Quentin Tarantino":[{t:"Pulp Fiction",y:1994,r:8.49},{t:"Inglourious Basterds",y:2009,r:8.22},{t:"Django Unchained",y:2012,r:8.19},{t:"Reservoir Dogs",y:1992,r:8.12},{t:"Kill Bill: Vol. 1",y:2003,r:7.97},{t:"Kill Bill: Vol. 2",y:2004,r:7.88}]
+};
+const ACTORS=[
+{n:"Takashi Shimura",d:"Akira Kurosawa",c:18},{n:"Toshirō Mifune",d:"Akira Kurosawa",c:16},
+{n:"Gunnar Björnstrand",d:"Ingmar Bergman",c:16},{n:"Erland Josephson",d:"Ingmar Bergman",c:13},
+{n:"Mia Farrow",d:"Woody Allen",c:12},{n:"Liv Ullmann",d:"Ingmar Bergman",c:10},
+{n:"Bibi Andersson",d:"Ingmar Bergman",c:10},{n:"Robert De Niro",d:"Martin Scorsese",c:10},
+{n:"Max von Sydow",d:"Ingmar Bergman",c:10},{n:"Anna Karina",d:"Jean-Luc Godard",c:7},
+{n:"Tony Leung Chiu-wai",d:"Wong Kar-Wai",c:7},{n:"Giulietta Masina",d:"Federico Fellini",c:7},
+{n:"Diane Keaton",d:"Woody Allen",c:7},{n:"Stellan Skarsgård",d:"Lars von Trier",c:6},
+{n:"Leonardo DiCaprio",d:"Martin Scorsese",c:6},{n:"Harvey Keitel",d:"Martin Scorsese",c:6},
+{n:"Tatsuya Nakadai",d:"Akira Kurosawa",c:5},{n:"Marcello Mastroianni",d:"Federico Fellini",c:5},
+{n:"Oh Dal-su",d:"Park Chan-wook",c:5},{n:"Maggie Cheung",d:"Wong Kar-Wai",c:5},
+{n:"Michael Madsen",d:"Quentin Tarantino",c:5},{n:"Mykola Hrynko",d:"Andrei Tarkovsky",c:5},
+{n:"Song Kang-ho",d:"Bong Joon-ho",c:4},{n:"Laura Dern",d:"David Lynch",c:4},
+{n:"Cary Grant",d:"Alfred Hitchcock",c:4},{n:"Kirin Kiki",d:"Hirokazu Kore-eda",c:4},
+{n:"Fatma Ceylan",d:"Nuri Bilge Ceylan",c:4},{n:"Feridun Koç",d:"Zeki Demirkubuz",c:4},
+{n:"Samuel L. Jackson",d:"Quentin Tarantino",c:4},{n:"Charlotte Gainsbourg",d:"Lars von Trier",c:4}
+];
+const STUDIOS=[
+{n:"Shochiku",f:30,dirs:["Akira Kurosawa","Yasujirō Ozu","Hirokazu Kore-eda"]},
+{n:"40 Acres & a Mule",f:30,dirs:["Spike Lee"]},
+{n:"SF Studios",f:24,dirs:["Ingmar Bergman","Jean-Luc Godard"]},
+{n:"TOHO",f:23,dirs:["Akira Kurosawa","Woody Allen","François Truffaut","Hirokazu Kore-eda"]},
+{n:"Warner Bros.",f:22,dirs:["Stanley Kubrick","Martin Scorsese","Alfred Hitchcock","David Fincher","Bong Joon-ho"]},
+{n:"Universal",f:20,dirs:["Stanley Kubrick","Martin Scorsese","Alfred Hitchcock","Quentin Tarantino","Joel Coen","Spike Lee"]},
+{n:"Road Movies",f:20,dirs:["Wim Wenders","Michelangelo Antonioni"]},
+{n:"ARTE France",f:19,dirs:["Nuri Bilge Ceylan","Lars von Trier","Michael Haneke","Bong Joon-ho"]},
+{n:"Les Films du Carrosse",f:19,dirs:["Jean-Luc Godard","François Truffaut"]},
+{n:"El Deseo",f:18,dirs:["Pedro Almodóvar"]},
+{n:"RAI",f:15,dirs:["Andrei Tarkovsky","Federico Fellini","Michelangelo Antonioni","Ingmar Bergman"]},
+{n:"United Artists",f:15,dirs:["Stanley Kubrick","Woody Allen","Martin Scorsese","Jean Renoir"]},
+{n:"MK2 Films",f:12,dirs:["Abbas Kiarostami","Michael Haneke","Krzysztof Kieślowski","Yılmaz Güney"]},
+{n:"Miramax",f:12,dirs:["Woody Allen","Martin Scorsese","Quentin Tarantino","Joel Coen"]},
+{n:"CJ Entertainment",f:11,dirs:["Park Chan-wook","Bong Joon-ho"]},
+{n:"Zentropa",f:14,dirs:["Lars von Trier"]},
+{n:"Film i Väst",f:14,dirs:["Nuri Bilge Ceylan","Lars von Trier","Wim Wenders","Semih Kaplanoğlu"]},
+{n:"Wega Film",f:11,dirs:["Michael Haneke"]},
+{n:"Paramount",f:11,dirs:["Martin Scorsese","Alfred Hitchcock","David Fincher","Spike Lee","Terrence Malick"]}
+];
+
+// ═══════════ COLORS & STATE ═══════════
+const C={director:'#e2b93b',movement:'#b06de8',external:'#5b8def',bridge:'#4ecdc4',film:'#e85555',actor:'#f06830',studio:'#3dc98a'};
+const EC={influence:'rgba(240,104,48,0.55)',movement:'rgba(176,109,232,0.25)',bridge:'rgba(78,205,196,0.3)',film:'rgba(232,85,85,0.2)',actor:'rgba(240,104,48,0.2)',studio:'rgba(61,201,138,0.2)'};
+let nodes=[],edges=[],NM={};
+let mode='explore',pathSrc=null,timeYear=2025,timePlaying=false,timeInt=null;
+let pathHL=[];
+
+// ═══════════ BUILD ═══════════
+function build(){
+  nodes=[];edges=[];NM={};
+  D.forEach(d=>{const nd={id:d.n,label:d.n,type:'director',films:d.f,y1:d.y1,y2:d.y2,countries:d.c,top:d.top||[],radius:Math.max(7,Math.sqrt(d.f)*4.2),color:C.director,x:0,y:0,vx:0,vy:0,fx:null,fy:null,visible:true,cluster:null};nodes.push(nd);NM[d.n]=nd});
+  EXT.forEach(n=>{if(!NM[n]){const nd={id:n,label:n,type:'external',films:0,radius:6,color:C.external,x:0,y:0,vx:0,vy:0,fx:null,fy:null,visible:false};nodes.push(nd);NM[n]=nd}});
+  const ms=new Set();MOV.forEach(([p,m])=>ms.add(m));
+  ms.forEach(m=>{const nd={id:m,label:m,type:'movement',films:0,radius:5,color:C.movement,x:0,y:0,vx:0,vy:0,fx:null,fy:null,visible:true,cluster:m};nodes.push(nd);NM[m]=nd});
+  BRG.forEach(b=>{if(!NM[b.n]){const nd={id:b.n,label:b.n,type:'bridge',role:b.role,bdirs:b.dirs,films:0,radius:8,color:C.bridge,x:0,y:0,vx:0,vy:0,fx:null,fy:null,visible:false};nodes.push(nd);NM[b.n]=nd}});
+  INF.forEach(([f,t])=>{if(NM[f]&&NM[t])edges.push({source:NM[f],target:NM[t],type:'influence',visible:true})});
+  MOV.forEach(([p,m])=>{if(NM[p]&&NM[m]){edges.push({source:NM[p],target:NM[m],type:'movement',visible:true});if(!NM[p].cluster)NM[p].cluster=m}});
+  BRG.forEach(b=>{if(NM[b.n])b.dirs.forEach(d=>{if(NM[d])edges.push({source:NM[b.n],target:NM[d],type:'bridge',visible:false})})});
+  // Films (top 5 per director with data)
+  Object.keys(FILMS).forEach(dir=>{if(!NM[dir])return;FILMS[dir].slice(0,5).forEach(f=>{const fid=f.t;if(!NM[fid]){const nd={id:fid,label:f.t,type:'film',films:0,radius:4,color:C.film,x:NM[dir].x+(Math.random()-.5)*80,y:NM[dir].y+(Math.random()-.5)*80,vx:0,vy:0,fx:null,fy:null,visible:false,year:f.y,rating:f.r,dirName:dir};nodes.push(nd);NM[fid]=nd}edges.push({source:NM[dir],target:NM[fid],type:'film',visible:false})})});
+  // Actors
+  ACTORS.forEach(a=>{if(!NM[a.n]){const nd={id:a.n,label:a.n,type:'actor',films:a.c,radius:Math.max(4,Math.sqrt(a.c)*2.5),color:C.actor,x:0,y:0,vx:0,vy:0,fx:null,fy:null,visible:false,dirName:a.d,actCount:a.c};nodes.push(nd);NM[a.n]=nd}if(NM[a.d])edges.push({source:NM[a.n],target:NM[a.d],type:'actor',visible:false})});
+  // Studios
+  STUDIOS.forEach(s=>{if(!NM[s.n]){const nd={id:s.n,label:s.n,type:'studio',films:s.f,radius:Math.max(5,Math.sqrt(s.f)*1.8),color:C.studio,x:0,y:0,vx:0,vy:0,fx:null,fy:null,visible:false,studioFilms:s.f,studioDirs:s.dirs};nodes.push(nd);NM[s.n]=nd}s.dirs.forEach(d=>{if(NM[d])edges.push({source:NM[s.n],target:NM[d],type:'studio',visible:false})})});
+  shufflePos();
+}
+function shufflePos(){const cx=cv.width/(2*dpr),cy=cv.height/(2*dpr);nodes.forEach(n=>{n.x=cx+(Math.random()-.5)*700;n.y=cy+(Math.random()-.5)*500;n.vx=0;n.vy=0})}
+
+// ═══════════ PHYSICS ═══════════
+let fMul=.45,lDist=170,paused=false;const DMP=.87;
+function sim(){
+  if(paused)return;const str=fMul*.6;
+  for(let i=0;i<nodes.length;i++){if(!nodes[i].visible)continue;for(let j=i+1;j<nodes.length;j++){if(!nodes[j].visible)continue;let dx=nodes[j].x-nodes[i].x,dy=nodes[j].y-nodes[i].y,d=Math.sqrt(dx*dx+dy*dy)||1,f=(str*10000)/(d*d),fx=(dx/d)*f,fy=(dy/d)*f;nodes[i].vx-=fx;nodes[i].vy-=fy;nodes[j].vx+=fx;nodes[j].vy+=fy}}
+  edges.forEach(e=>{if(!e.visible||!e.source.visible||!e.target.visible)return;let dx=e.target.x-e.source.x,dy=e.target.y-e.source.y,d=Math.sqrt(dx*dx+dy*dy)||1;const ld=e.type==='bridge'?lDist*.7:lDist;let f=(d-ld)*str*.007,fx=(dx/d)*f,fy=(dy/d)*f;e.source.vx+=fx;e.source.vy+=fy;e.target.vx-=fx;e.target.vy-=fy});
+  if(mode==='cluster'){const cc={};nodes.forEach(n=>{if(n.visible&&n.cluster&&n.type==='director'){if(!cc[n.cluster])cc[n.cluster]={x:0,y:0,c:0};cc[n.cluster].x+=n.x;cc[n.cluster].y+=n.y;cc[n.cluster].c++}});
+  Object.keys(cc).forEach(k=>{cc[k].x/=cc[k].c;cc[k].y/=cc[k].c});
+  nodes.forEach(n=>{if(n.visible&&n.cluster&&cc[n.cluster]&&n.type==='director'){n.vx+=(cc[n.cluster].x-n.x)*.004*str;n.vy+=(cc[n.cluster].y-n.y)*.004*str}})}
+  const cx=cv.width/(2*dpr),cy=cv.height/(2*dpr);
+  nodes.forEach(n=>{if(!n.visible)return;if(n.fx!==null){n.x=n.fx;n.y=n.fy;n.vx=0;n.vy=0;return}n.vx+=(cx-n.x)*.0002*str;n.vy+=(cy-n.y)*.0002*str;n.vx*=DMP;n.vy*=DMP;n.x+=n.vx;n.y+=n.vy});
+}
+
+// ═══════════ CANVAS ═══════════
+const cv=document.getElementById('gc'),ctx=cv.getContext('2d');
+const mc=document.getElementById('mc'),mctx=mc.getContext('2d');
+let dpr=devicePixelRatio||1,zoom=1,panX=0,panY=0;
+let dragging=null,dragStart=null,isPan=false,hovered=null,selected=null;
+let didDrag=false;
+
+function rsz(){dpr=devicePixelRatio||1;cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px'}
+addEventListener('resize',rsz);rsz();
+
+function draw(){
+  ctx.clearRect(0,0,cv.width,cv.height);ctx.save();ctx.scale(dpr,dpr);ctx.translate(panX,panY);ctx.scale(zoom,zoom);
+  edges.forEach(e=>{
+    if(!e.visible||!e.source.visible||!e.target.visible)return;
+    const iS=selected&&(e.source.id===selected.id||e.target.id===selected.id);
+    const iP=pathHL.length&&pathHL.some(([a,b])=>(e.source.id===a&&e.target.id===b)||(e.source.id===b&&e.target.id===a));
+    let col=e.type==='influence'?EC.influence:e.type==='bridge'?EC.bridge:e.type==='film'?EC.film:e.type==='actor'?EC.actor:e.type==='studio'?EC.studio:EC.movement;
+    if(iP)col='rgba(226,185,59,0.9)';else if(iS)col=e.type==='influence'?'rgba(240,104,48,0.85)':e.type==='bridge'?'rgba(78,205,196,0.7)':'rgba(176,109,232,0.6)';
+    ctx.beginPath();ctx.moveTo(e.source.x,e.source.y);ctx.lineTo(e.target.x,e.target.y);ctx.strokeStyle=col;ctx.lineWidth=iP?3:iS?1.8:.7;ctx.stroke();
+    if(e.type==='influence'){const dx=e.target.x-e.source.x,dy=e.target.y-e.source.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist>0){const t=1-(e.target.radius+5)/dist,ax=e.source.x+dx*t,ay=e.source.y+dy*t,a=Math.atan2(dy,dx),l=iP?11:iS?9:6;ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(ax-l*Math.cos(a-.35),ay-l*Math.sin(a-.35));ctx.lineTo(ax-l*Math.cos(a+.35),ay-l*Math.sin(a+.35));ctx.closePath();ctx.fillStyle=col;ctx.fill()}}
+  });
+  nodes.forEach(n=>{
+    if(!n.visible)return;
+    const iS=selected&&selected.id===n.id,iH=hovered&&hovered.id===n.id;
+    const iC=selected&&edges.some(e=>e.visible&&((e.source.id===selected.id&&e.target.id===n.id)||(e.target.id===selected.id&&e.source.id===n.id)));
+    const iOP=pathHL.length&&pathHL.some(([a,b])=>a===n.id||b===n.id);
+    const dim=(selected&&!iS&&!iC&&!iOP)||(mode==='timeline'&&n.type==='director'&&n.y1>timeYear);
+    if(iS||iH||iOP){ctx.beginPath();ctx.arc(n.x,n.y,n.radius+8,0,Math.PI*2);const g=ctx.createRadialGradient(n.x,n.y,n.radius,n.x,n.y,n.radius+12);g.addColorStop(0,n.color+'40');g.addColorStop(1,'transparent');ctx.fillStyle=g;ctx.fill()}
+    ctx.beginPath();ctx.arc(n.x,n.y,n.radius,0,Math.PI*2);ctx.fillStyle=dim?n.color+'25':n.color;ctx.fill();
+    if(iS){ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke()}
+    if(iOP&&!iS){ctx.strokeStyle=C.director;ctx.lineWidth=1.5;ctx.stroke()}
+    const fs=n.type==='director'?Math.max(8.5,n.radius*.8):n.type==='bridge'?8.5:7.5;
+    ctx.font=`${n.type==='movement'?'500':'600'} ${fs}px 'Source Sans 3',sans-serif`;ctx.textAlign='center';ctx.textBaseline='top';
+    ctx.fillStyle=dim?'rgba(229,227,223,0.1)':(iS||iH||iOP)?'#fff':'rgba(229,227,223,0.7)';
+    ctx.fillText(n.label,n.x,n.y+n.radius+3);
+  });
+  ctx.restore();
+  // Minimap
+  mctx.clearRect(0,0,320,200);
+  let mnX=1e9,mxX=-1e9,mnY=1e9,mxY=-1e9;
+  nodes.forEach(n=>{if(n.visible){mnX=Math.min(mnX,n.x);mxX=Math.max(mxX,n.x);mnY=Math.min(mnY,n.y);mxY=Math.max(mxY,n.y)}});
+  if(isFinite(mnX)){const p=40,sx=300/(mxX-mnX+p*2),sy=180/(mxY-mnY+p*2),s=Math.min(sx,sy);
+  nodes.forEach(n=>{if(!n.visible)return;const x=10+(n.x-mnX+p)*s,y=10+(n.y-mnY+p)*s;mctx.beginPath();mctx.arc(x,y,Math.max(1.2,n.radius*s*.3),0,Math.PI*2);mctx.fillStyle=n.color+'70';mctx.fill()})}
+}
+
+// ═══════════ INTERACTION ═══════════
+function gN(mx,my){const x=(mx-panX)/zoom,y=(my-panY)/zoom;let cl=null,md=1e9;nodes.forEach(n=>{if(!n.visible)return;const d=Math.sqrt((n.x-x)**2+(n.y-y)**2);if(d<n.radius+5&&d<md){cl=n;md=d}});return cl}
+
+cv.addEventListener('mousedown',e=>{didDrag=false;const nd=gN(e.clientX,e.clientY);if(nd&&mode!=='path'){dragging=nd;nd.fx=nd.x;nd.fy=nd.y}else if(!nd){isPan=true;dragStart={x:e.clientX-panX,y:e.clientY-panY}}});
+cv.addEventListener('mousemove',e=>{
+  if(dragging){didDrag=true;dragging.fx=(e.clientX-panX)/zoom;dragging.fy=(e.clientY-panY)/zoom;dragging.x=dragging.fx;dragging.y=dragging.fy}
+  else if(isPan&&dragStart){didDrag=true;panX=e.clientX-dragStart.x;panY=e.clientY-dragStart.y}
+  else{const nd=gN(e.clientX,e.clientY);hovered=nd;cv.style.cursor=nd?(mode==='path'?'crosshair':'pointer'):'grab';
+    const tt=document.getElementById('tt');
+    if(nd){let m=nd.type==='director'?`${nd.films} film · ${nd.countries?nd.countries.join(', '):''}`:nd.type==='movement'?'Cinema Movement':nd.type==='bridge'?`Bridge · ${nd.role}`:nd.type==='external'?'External Influence':nd.type==='film'?`${nd.year} · ★ ${nd.rating?.toFixed(1)||'?'} · ${nd.dirName}`:nd.type==='actor'?`${nd.actCount} film · ${nd.dirName}`:nd.type==='studio'?`${nd.studioFilms} film`:'';
+    tt.querySelector('.tn').textContent=nd.label;tt.querySelector('.tm').textContent=m;tt.style.display='block';tt.style.left=(e.clientX+14)+'px';tt.style.top=(e.clientY-8)+'px'}else tt.style.display='none'}
+});
+cv.addEventListener('mouseup',()=>{if(dragging){dragging.fx=null;dragging.fy=null}dragging=null;isPan=false;dragStart=null});
+cv.addEventListener('click',e=>{
+  if(didDrag)return;const nd=gN(e.clientX,e.clientY);
+  if(mode==='path'&&nd&&nd.type==='director'){
+    if(!pathSrc){pathSrc=nd;selected=nd;showDetail(nd)}
+    else if(nd.id!==pathSrc.id){findPath(pathSrc.id,nd.id);pathSrc=null}
+    return;
+  }
+  if(nd){selected=nd;showDetail(nd)}else{selected=null;cD()}
+});
+cv.addEventListener('wheel',e=>{e.preventDefault();const f=e.deltaY>0?.92:1.08;const nz=Math.max(.2,Math.min(5,zoom*f));panX=e.clientX-(e.clientX-panX)*(nz/zoom);panY=e.clientY-(e.clientY-panY)*(nz/zoom);zoom=nz},{passive:false});
+
+// ═══════════ SHORTEST PATH (BFS) ═══════════
+function findPath(src,tgt){
+  const adj={};nodes.forEach(n=>{if(n.visible)adj[n.id]=[]});
+  edges.forEach(e=>{if(e.visible&&e.source.visible&&e.target.visible){adj[e.source.id]?.push(e.target.id);adj[e.target.id]?.push(e.source.id)}});
+  const q=[src],vis=new Set([src]),prev={};prev[src]=null;let found=false;
+  while(q.length){const cur=q.shift();if(cur===tgt){found=true;break}
+  for(const nb of (adj[cur]||[])){if(!vis.has(nb)){vis.add(nb);prev[nb]=cur;q.push(nb)}}}
+  if(!found){pathHL=[];document.getElementById('po').classList.remove('vis');return}
+  const path=[];let c=tgt;while(c!==null){path.unshift(c);c=prev[c]}
+  pathHL=[];for(let i=0;i<path.length-1;i++)pathHL.push([path[i],path[i+1]]);
+  const po=document.getElementById('po'),pn=document.getElementById('pN');
+  pn.innerHTML=path.map((p,i)=>`<span style="color:${NM[p]?.color||'#fff'}">${p}</span>${i<path.length-1?'<span class="po-a"> → </span>':''}`).join('');
+  po.classList.add('vis');selected=null;cD();
+}
+function cP(){pathHL=[];document.getElementById('po').classList.remove('vis')}
+
+// ═══════════ DETAIL PANEL ═══════════
+function showDetail(nd){
+  const dp=document.getElementById('dp'),dn=document.getElementById('dn'),db=document.getElementById('db');
+  dn.textContent=nd.label;let h='';
+  if(nd.type==='director'){
+    const deg=DEG[nd.id]||0;const ib=INF.filter(([f,t])=>f===nd.id).map(([f,t])=>t);const io=INF.filter(([f,t])=>t===nd.id).map(([f,t])=>f);
+    h+=`<div class="ds"><h4>Statistics</h4>`;
+    h+=`<div class="strow"><span class="sk">Films</span><span class="svl" style="color:var(--gold)">${nd.films}</span></div>`;
+    h+=`<div class="strow"><span class="sk">Active period</span><span class="svl">${nd.y1}–${nd.y2}</span></div>`;
+    h+=`<div class="strow"><span class="sk">Country</span><span class="svl">${(nd.countries||[]).join(', ')}</span></div>`;
+    h+=`<div class="strow"><span class="sk">Degree</span><span class="svl">${deg.toLocaleString()}</span></div>`;
+    h+=`<div class="strow"><span class="sk">Influenced by</span><span class="svl" style="color:var(--orange)">${ib.length}</span></div>`;
+    h+=`<div class="strow"><span class="sk">Influenced</span><span class="svl" style="color:var(--green)">${io.length}</span></div></div>`;
+    const filmList=FILMS[nd.id]||nd.top||[];
+    if(filmList.length){h+=`<div class="ds"><h4>Top Films</h4>`;filmList.slice(0,8).forEach(f=>{h+=`<div class="fr"><span class="ft">${f.t}</span><span class="fy">${f.y}</span><span class="frt">★ ${f.r.toFixed(1)}</span></div>`});h+=`</div>`}
+    if(ib.length){h+=`<div class="ds"><h4>Influenced by</h4>`;ib.forEach(t=>{h+=`<div class="il"><span class="ia">←</span> ${t}</div>`});h+=`</div>`}
+    if(io.length){h+=`<div class="ds"><h4>Influenced</h4>`;io.forEach(f=>{h+=`<div class="il"><span class="ia">→</span> ${f}</div>`});h+=`</div>`}
+    const mvs=MOV.filter(([p,m])=>p===nd.id).map(([p,m])=>m);
+    if(mvs.length){h+=`<div class="ds"><h4>Movements</h4>`;mvs.forEach(m=>{h+=`<div class="dtg" style="background:rgba(176,109,232,.12);color:var(--purple);margin-bottom:3px">${m}</div> `});h+=`</div>`}
+    const brs=BRG.filter(b=>b.dirs.includes(nd.id));
+    if(brs.length){h+=`<div class="ds"><h4>Bridge Persons</h4>`;brs.forEach(b=>{const others=b.dirs.filter(d=>d!==nd.id).join(', ');h+=`<div style="font-size:11px;padding:3px 0;border-bottom:1px solid rgba(37,37,50,.3)"><span style="color:var(--cyan);font-weight:600">${b.n}</span> <span style="color:var(--text-dim)">(${b.role})</span><br><span style="font-size:10px;color:var(--text-dim)">→ ${others}</span></div>`});h+=`</div>`}
+    const acts=ACTORS.filter(a=>a.d===nd.id).sort((a,b)=>b.c-a.c);
+    if(acts.length){h+=`<div class="ds"><h4>Frequent Collaborators</h4>`;acts.forEach(a=>{h+=`<div class="strow"><span class="sk" style="color:var(--orange)">${a.n}</span><span class="svl">${a.c} film</span></div>`});h+=`</div>`}
+    const studs=STUDIOS.filter(s=>s.dirs.includes(nd.id));
+    if(studs.length){h+=`<div class="ds"><h4>Studios</h4>`;studs.forEach(s=>{h+=`<div class="strow"><span class="sk" style="color:var(--green)">${s.n}</span><span class="svl">${s.f} film</span></div>`});h+=`</div>`}
+  } else if(nd.type==='movement'){
+    const mb=MOV.filter(([p,m])=>m===nd.id).map(([p,m])=>p);
+    h+=`<div class="ds"><h4>Members (${mb.length})</h4>`;mb.forEach(p=>{const d=D.find(x=>x.n===p);h+=`<div class="il">${p}${d?` <span style="color:var(--text-dim)">(${d.f} film)</span>`:''}</div>`});h+=`</div>`;
+  } else if(nd.type==='bridge'){
+    h+=`<div class="ds"><h4>Bridge Info</h4><div class="dtg" style="background:rgba(78,205,196,.1);color:var(--cyan)">${nd.role}</div></div>`;
+    h+=`<div class="ds"><h4>Connected Directors</h4>`;(nd.bdirs||[]).forEach(d=>{h+=`<div class="il"><span class="ia">⟷</span> ${d}</div>`});h+=`</div>`;
+  } else if(nd.type==='external'){
+    const io=INF.filter(([f,t])=>t===nd.id).map(([f,t])=>f);
+    h+=`<div class="ds"><h4>External Influence</h4><div class="dtg" style="background:rgba(91,141,239,.1);color:var(--blue)">Director/Writer</div></div>`;
+    if(io.length){h+=`<div class="ds"><h4>Influenced</h4>`;io.forEach(f=>{h+=`<div class="il"><span class="ia">→</span> ${f}</div>`});h+=`</div>`}
+  } else if(nd.type==='film'){
+    h+=`<div class="ds"><h4>Film Info</h4>`;
+    h+=`<div class="strow"><span class="sk">Director</span><span class="svl" style="color:var(--gold)">${nd.dirName}</span></div>`;
+    h+=`<div class="strow"><span class="sk">Year</span><span class="svl">${nd.year}</span></div>`;
+    h+=`<div class="strow"><span class="sk">Rating</span><span class="svl" style="color:var(--gold)">★ ${nd.rating?.toFixed(1)||'?'}</span></div></div>`;
+  } else if(nd.type==='actor'){
+    h+=`<div class="ds"><h4>Actor Info</h4>`;
+    h+=`<div class="strow"><span class="sk">Director</span><span class="svl" style="color:var(--gold)">${nd.dirName}</span></div>`;
+    h+=`<div class="strow"><span class="sk">Films together</span><span class="svl">${nd.actCount}</span></div></div>`;
+  } else if(nd.type==='studio'){
+    h+=`<div class="ds"><h4>Studio Info</h4>`;
+    h+=`<div class="strow"><span class="sk">Film count</span><span class="svl" style="color:var(--green)">${nd.studioFilms}</span></div></div>`;
+    if(nd.studioDirs){h+=`<div class="ds"><h4>Directors</h4>`;nd.studioDirs.forEach(d=>{h+=`<div class="il"><span class="ia">⟷</span> ${d}</div>`});h+=`</div>`}
+  }
+  db.innerHTML=h;dp.classList.add('vis');
+}
+function cD(){document.getElementById('dp').classList.remove('vis')}
+
+// ═══════════ CONTROLS ═══════════
+const layers={directors:true,influences:true,movements:true,bridges:false,external:false,films:false,actors:false,studios:false};
+function tL(el){const l=el.dataset.l;layers[l]=!layers[l];el.classList.toggle('act');uV()}
+function uV(){
+  const q=document.getElementById('sI').value.toLowerCase().trim();
+  nodes.forEach(n=>{
+    if(n.type==='director')n.visible=layers.directors;
+    else if(n.type==='movement')n.visible=layers.movements;
+    else if(n.type==='external')n.visible=layers.external;
+    else if(n.type==='bridge')n.visible=layers.bridges;
+    else if(n.type==='film')n.visible=layers.films;
+    else if(n.type==='actor')n.visible=layers.actors;
+    else if(n.type==='studio')n.visible=layers.studios;
+    if(q&&n.visible){n.visible=n.label.toLowerCase().includes(q);
+      if(!n.visible){const con=edges.some(e=>(e.source.label.toLowerCase().includes(q)&&e.target.id===n.id)||(e.target.label.toLowerCase().includes(q)&&e.source.id===n.id));if(con)n.visible=true}}
+    if(mode==='timeline'&&n.type==='director'&&n.y1>timeYear)n.visible=false;
+  });
+  edges.forEach(e=>{if(e.type==='influence')e.visible=layers.influences;else if(e.type==='movement')e.visible=layers.movements;else if(e.type==='bridge')e.visible=layers.bridges;else if(e.type==='film')e.visible=layers.films;else if(e.type==='actor')e.visible=layers.actors;else if(e.type==='studio')e.visible=layers.studios});
+}
+document.getElementById('sI').addEventListener('input',uV);
+document.getElementById('fS').addEventListener('input',e=>{fMul=e.target.value/100;document.getElementById('fV').textContent=e.target.value});
+document.getElementById('dS').addEventListener('input',e=>{lDist=+e.target.value;document.getElementById('dV').textContent=e.target.value});
+function resetV(){zoom=1;panX=0;panY=0;selected=null;cD();cP();shufflePos()}
+function tP(){paused=!paused;const b=document.getElementById('pB');b.classList.toggle('act');b.textContent=paused?'Resume':'Pause'}
+
+// ═══════════ MODES ═══════════
+function setMode(m){
+  mode=m;document.querySelectorAll('.mt').forEach(t=>t.classList.remove('act'));
+  document.querySelector(`.mt[onclick="setMode('${m}')"]`)?.classList.add('act');
+  document.getElementById('tB').classList.toggle('vis',m==='timeline');
+  if(m==='path'){pathSrc=null;cP();alert('Click the first director, then click the second → shortest path will be shown')}
+  if(m!=='timeline'&&timeInt){clearInterval(timeInt);timePlaying=false}
+  uV();
+}
+
+// ═══════════ TIMELINE ═══════════
+document.getElementById('tS').addEventListener('input',e=>{timeYear=+e.target.value;document.getElementById('tY').textContent=timeYear;uV()});
+function tTP(){
+  if(timePlaying){clearInterval(timeInt);timePlaying=false;document.getElementById('tPl').textContent='▶ Play';return}
+  timePlaying=true;document.getElementById('tPl').textContent='⏸ Pause';
+  const sl=document.getElementById('tS');
+  timeYear=1925;sl.value=1925;document.getElementById('tY').textContent=1925;uV();
+  timeInt=setInterval(()=>{timeYear++;if(timeYear>2025){clearInterval(timeInt);timePlaying=false;document.getElementById('tPl').textContent='▶ Play';return}
+  sl.value=timeYear;document.getElementById('tY').textContent=timeYear;uV()},120);
+}
+
+// ═══════════ LEGEND ═══════════
+document.getElementById('lgd').innerHTML=[
+  {c:C.director,l:'Director'},{c:C.film,l:'Film'},{c:C.actor,l:'Actor'},{c:C.studio,l:'Studio'},
+  {c:C.movement,l:'Movement'},{c:C.bridge,l:'Bridge'},{c:C.external,l:'External Influence'},
+  {c:'#f06830',l:'Influence →'}
+].map(i=>`<div class="lgd-i"><span class="lgd-d" style="background:${i.c}"></span>${i.l}</div>`).join('');
+
+// ═══════════ MAIN ═══════════
+build();uV();
+(function loop(){sim();draw();requestAnimationFrame(loop)})();
+</script>
+</body>
+</html>

@@ -1,6 +1,12 @@
-import { Cpu, Database, Film } from 'lucide-react'
+import { Clapperboard, Cpu, Database, Film, GitCompareArrows, Search } from 'lucide-react'
 
-export default function Header({ stats }) {
+const TABS = [
+  { id: 'explore',  label: 'Keşfet',        icon: Search },
+  { id: 'compare',  label: 'Karşılaştır',   icon: GitCompareArrows },
+  { id: 'timeline', label: 'Kariyer',        icon: Clapperboard },
+]
+
+export default function Header({ stats, activeTab, onTabChange }) {
   const filmCount = stats?.nodes?.by_label?.find(r => r.label === 'Film')?.cnt ?? null
   const personCount = stats?.nodes?.by_label?.find(r => r.label === 'Person')?.cnt ?? null
 
@@ -39,6 +45,27 @@ export default function Header({ stats }) {
           </div>
         </div>
 
+      </div>
+
+      {/* Tab bar */}
+      <div className="mx-auto flex max-w-7xl gap-1 px-4">
+        {TABS.map(({ id, label, icon: Icon }) => (
+          <button
+            key={id}
+            onClick={() => onTabChange?.(id)}
+            className={`relative flex items-center gap-2 px-4 py-2.5 font-mono text-xs transition-colors ${
+              activeTab === id
+                ? 'text-cinema-accent'
+                : 'text-cinema-muted hover:text-cinema-text'
+            }`}
+          >
+            <Icon size={13} />
+            {label}
+            {activeTab === id && (
+              <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-cinema-accent" />
+            )}
+          </button>
+        ))}
       </div>
     </header>
   )

@@ -62,6 +62,29 @@ class QueryResponse(BaseModel):
     error: str | None = None
 
 
+class CompareRequest(BaseModel):
+    director1: str
+    director2: str
+
+
+class DirectorStats(BaseModel):
+    film_count: int
+    avg_runtime: float | None
+    year_range: str | None
+    avg_rating: float | None
+
+
+class CompareResponse(BaseModel):
+    director1_stats: DirectorStats
+    director2_stats: DirectorStats
+    shared_collaborators: list[dict]
+    shared_genres: list[dict]
+    shared_movements: list[str]
+    influence_path: list[dict]
+    interpretation: str
+    graph_data: GraphData
+
+
 # ── GET /debug/models ──────────────────────────────────────────────────────────
 
 @app.get("/debug/models")
@@ -139,7 +162,8 @@ def director_detail(name: str):
         "OPTIONAL MATCH (f)-[:HAS_GENRE]->(g:Genre) "
         "OPTIONAL MATCH (f)-[:FROM_COUNTRY]->(c:Country) "
         "WITH f, collect(DISTINCT g.name) AS genres, collect(DISTINCT c.name) AS countries "
-        "RETURN f.title AS title, f.year AS year, f.runtime AS runtime, genres, countries "
+        "RETURN f.title AS title, f.year AS year, f.runtime AS runtime, "
+        "       f.rating AS rating, f.vote_count AS vote_count, genres, countries "
         "ORDER BY f.year",
         {"name": name},
     )
@@ -237,6 +261,136 @@ async def query(req: QueryRequest):
         interpretation=interpretation,
         graph_data=GraphData(**graph_data),
         error=error_msg,
+    )
+
+
+# ── POST /compare ──────────────────────────────────────────────────────────────
+
+@app.post("/compare", response_model=CompareResponse)
+async def compare(req: CompareRequest):
+    d1, d2 = req.director1, req.director2
+
+    # 1. Her iki yönetmenin istatistikleri
+    def fetch_stats(name: str) -> DirectorStats:
+        rows = db.execute_query(
+            "MATCH (d:Person {name: $name})-[:DIRECTOR]->(f:Film) "
+            "WITH count(f) AS film_count, avg(f.runtime) AS avg_runtime, "
+            "     min(f.year) AS year_from, max(f.year) AS year_to, "
+            "     avg(f.rating) AS avg_rating "
+            "RETURN film_count, avg_runtime, year_from, year_to, avg_rating",
+            {"name": name},
+        )
+        if not rows:
+            return DirectorStats(film_count=0, avg_runtime=None, year_range=None, avg_rating=None)
+        r = rows[0]
+        year_from = r.get("year_from")
+        year_to   = r.get("year_to")
+        year_range = f"{year_from}–{year_to}" if year_from and year_to else None
+        avg_rating = r.get("avg_rating")
+        avg_rating = round(avg_rating, 2) if avg_rating is not None else None
+        avg_runtime = r.get("avg_runtime")
+        avg_runtime = round(avg_runtime, 1) if avg_runtime is not None else None
+        return DirectorStats(
+            film_count=r.get("film_count", 0),
+            avg_runtime=avg_runtime,
+            year_range=year_range,
+            avg_rating=avg_rating,
+        )
+
+    stats1 = fetch_stats(d1)
+    stats2 = fetch_stats(d2)
+
+    if stats1.film_count == 0:
+        raise HTTPException(status_code=404, detail=f"'{d1}' bulunamadı veya filmi yok.")
+    if stats2.film_count == 0:
+        raise HTTPException(status_code=404, detail=f"'{d2}' bulunamadı veya filmi yok.")
+
+    # 2. Ortak çalışanlar (oyuncu, DP, besteci, kurgu)
+    shared_collaborators = db.execute_query(
+        "MATCH (d1:Person {name: $name1})-[:DIRECTOR]->(f1:Film)"
+        "<-[:ACTOR|DIRECTOR_OF_PHOTOGRAPHY|ORIGINAL_MUSIC_COMPOSER|EDITOR]-(p:Person) "
+        "MATCH (d2:Person {name: $name2})-[:DIRECTOR]->(f2:Film)"
+        "<-[:ACTOR|DIRECTOR_OF_PHOTOGRAPHY|ORIGINAL_MUSIC_COMPOSER|EDITOR]-(p) "
+        "WHERE p.name <> $name1 AND p.name <> $name2 "
+        "WITH p.name AS name, count(DISTINCT f1) AS films_with_d1, count(DISTINCT f2) AS films_with_d2 "
+        "RETURN name, films_with_d1, films_with_d2 "
+        "ORDER BY films_with_d1 + films_with_d2 DESC "
+        "LIMIT 20",
+        {"name1": d1, "name2": d2},
+    )
+
+    # 3. Ortak türler
+    shared_genres = db.execute_query(
+        "MATCH (d1:Person {name: $name1})-[:DIRECTOR]->(f1:Film)-[:HAS_GENRE]->(g:Genre) "
+        "MATCH (d2:Person {name: $name2})-[:DIRECTOR]->(f2:Film)-[:HAS_GENRE]->(g) "
+        "WITH g.name AS genre, count(DISTINCT f1) AS films_d1, count(DISTINCT f2) AS films_d2 "
+        "RETURN genre, films_d1, films_d2 "
+        "ORDER BY films_d1 + films_d2 DESC",
+        {"name1": d1, "name2": d2},
+    )
+
+    # 4. Ortak akımlar
+    movement_rows = db.execute_query(
+        "MATCH (d1:Person {name: $name1})-[:PART_OF_MOVEMENT]->(m:Movement)"
+        "<-[:PART_OF_MOVEMENT]-(d2:Person {name: $name2}) "
+        "RETURN m.name AS movement",
+        {"name1": d1, "name2": d2},
+    )
+    shared_movements = [r["movement"] for r in movement_rows]
+
+    # 5. INFLUENCED_BY bağlantıları
+    influence_paths: list[dict] = []
+
+    direct_d1_to_d2 = db.execute_query(
+        "MATCH (d1:Person {name: $name1})-[:INFLUENCED_BY]->(d2:Person {name: $name2}) "
+        "RETURN $name1 AS source, $name2 AS target",
+        {"name1": d1, "name2": d2},
+    )
+    for r in direct_d1_to_d2:
+        influence_paths.append({"type": "direct", "source": r["source"], "target": r["target"]})
+
+    direct_d2_to_d1 = db.execute_query(
+        "MATCH (d2:Person {name: $name2})-[:INFLUENCED_BY]->(d1:Person {name: $name1}) "
+        "RETURN $name2 AS source, $name1 AS target",
+        {"name1": d1, "name2": d2},
+    )
+    for r in direct_d2_to_d1:
+        influence_paths.append({"type": "direct", "source": r["source"], "target": r["target"]})
+
+    common_influencers = db.execute_query(
+        "MATCH (d1:Person {name: $name1})-[:INFLUENCED_BY]->(m:Person)"
+        "<-[:INFLUENCED_BY]-(d2:Person {name: $name2}) "
+        "WITH m.name AS common_influence "
+        "RETURN common_influence",
+        {"name1": d1, "name2": d2},
+    )
+    for r in common_influencers:
+        influence_paths.append({"type": "common_influence", "common_influence": r["common_influence"]})
+
+    # 6. Graph verisi
+    graph_data = _build_compare_graph(d1, d2, shared_collaborators, shared_genres, shared_movements, influence_paths)
+
+    # 7. Gemini yorumu
+    interpretation = await agent.interpret_comparison(
+        director1=d1,
+        director2=d2,
+        stats1=stats1.model_dump(),
+        stats2=stats2.model_dump(),
+        shared_collaborators=shared_collaborators,
+        shared_genres=shared_genres,
+        shared_movements=shared_movements,
+        influence_paths=influence_paths,
+    )
+
+    return CompareResponse(
+        director1_stats=stats1,
+        director2_stats=stats2,
+        shared_collaborators=shared_collaborators,
+        shared_genres=shared_genres,
+        shared_movements=shared_movements,
+        influence_path=influence_paths,
+        interpretation=interpretation,
+        graph_data=GraphData(**graph_data),
     )
 
 
@@ -352,5 +506,67 @@ def _build_graph_json(rows: list[dict]) -> dict:
             "target": tgt_id,
             "type": rel,
         })
+
+    return {"nodes": list(nodes.values()), "edges": edges}
+
+
+def _build_compare_graph(
+    director1: str,
+    director2: str,
+    shared_collaborators: list[dict],
+    shared_genres: list[dict],
+    shared_movements: list[str],
+    influence_paths: list[dict],
+) -> dict:
+    """
+    /compare endpoint'i için iki yönetmenin bağlantı ağını birleştiren graph JSON üretir.
+    """
+    nodes: dict[str, dict] = {}
+    edges: list[dict] = []
+
+    def add_node(nid: str, label: str, ntype: str):
+        if nid not in nodes:
+            nodes[nid] = {"id": nid, "label": label, "type": ntype}
+
+    def add_edge(source: str, target: str, rel_type: str):
+        eid = f"{source}-{rel_type}-{target}"
+        edges.append({"id": eid, "source": source, "target": target, "type": rel_type})
+
+    d1_id = f"Person:{director1}"
+    d2_id = f"Person:{director2}"
+    add_node(d1_id, director1, "Person")
+    add_node(d2_id, director2, "Person")
+
+    for collab in shared_collaborators:
+        nid = f"Person:{collab['name']}"
+        add_node(nid, collab["name"], "Person")
+        add_edge(d1_id, nid, "COLLABORATED")
+        add_edge(d2_id, nid, "COLLABORATED")
+
+    for genre_row in shared_genres:
+        nid = f"Genre:{genre_row['genre']}"
+        add_node(nid, genre_row["genre"], "Genre")
+        add_edge(d1_id, nid, "HAS_GENRE")
+        add_edge(d2_id, nid, "HAS_GENRE")
+
+    for mv in shared_movements:
+        nid = f"Movement:{mv}"
+        add_node(nid, mv, "Movement")
+        add_edge(d1_id, nid, "PART_OF_MOVEMENT")
+        add_edge(d2_id, nid, "PART_OF_MOVEMENT")
+
+    for path in influence_paths:
+        if path.get("type") == "direct":
+            src = f"Person:{path['source']}"
+            tgt = f"Person:{path['target']}"
+            add_node(src, path["source"], "Person")
+            add_node(tgt, path["target"], "Person")
+            add_edge(src, tgt, "INFLUENCED_BY")
+        elif path.get("type") == "common_influence":
+            mid_label = path["common_influence"]
+            mid = f"Person:{mid_label}"
+            add_node(mid, mid_label, "Person")
+            add_edge(d1_id, mid, "INFLUENCED_BY")
+            add_edge(d2_id, mid, "INFLUENCED_BY")
 
     return {"nodes": list(nodes.values()), "edges": edges}

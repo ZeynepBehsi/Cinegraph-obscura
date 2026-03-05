@@ -32,3 +32,15 @@ export async function getHealth() {
 export async function exploreNode(name, depth = 1) {
   return request(`/explore/${encodeURIComponent(name)}?depth=${depth}`)
 }
+
+export async function getDirectorDetail(name) {
+  return request(`/director/${encodeURIComponent(name)}`)
+}
+
+export async function compareDirectors(director1, director2) {
+  return request('/compare', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ director1, director2 }),
+  })
+}

@@ -1,12 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
+import CompareView from './components/CompareView'
 import Header from './components/Header'
 import QueryInput from './components/QueryInput'
 import ResultDisplay from './components/ResultDisplay'
+import TimelineView from './components/TimelineView'
 import { getStats, queryAgent } from './utils/api'
 
 export default function App() {
-  const [stats, setStats]       = useState(null)
-  const [results, setResults]   = useState([])
+  const [activeTab, setActiveTab] = useState('explore')
+  const [stats, setStats]         = useState(null)
+  const [results, setResults]     = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const bottomRef = useRef(null)
 
@@ -51,6 +54,12 @@ export default function App() {
     handleQuery(`"${node.label}" hakkında detaylı bilgi ver`)
   }
 
+  // ── Timeline'dan film tıklaması → Keşfet'e geç + sorgu çalıştır ──────────
+  function handleFilmClick(film) {
+    setActiveTab('explore')
+    handleQuery(`"${film.title}" (${film.year}) filmini detaylı anlat`)
+  }
+
   // ── Render ─────────────────────────────────────────────────────────────────
   return (
     <div className="relative min-h-screen bg-cinema-bg font-body text-cinema-text">
@@ -65,43 +74,54 @@ export default function App() {
         }}
       />
 
-      {/* Header */}
-      <Header stats={stats} />
+      {/* Header (tabs dahil) */}
+      <Header stats={stats} activeTab={activeTab} onTabChange={setActiveTab} />
 
       {/* Main */}
-      <main className="mx-auto max-w-6xl px-4 pb-48 pt-8">
+      <main
+        className={`mx-auto max-w-6xl px-4 pt-8 ${activeTab === 'explore' ? 'pb-48' : 'pb-16'}`}
+      >
+        {activeTab === 'explore' ? (
+          <>
+            {/* Welcome state */}
+            {results.length === 0 && !isLoading && (
+              <WelcomeState stats={stats} />
+            )}
 
-        {/* Welcome state */}
-        {results.length === 0 && !isLoading && (
-          <WelcomeState stats={stats} />
+            {/* Sonuç listesi */}
+            <div className="space-y-8">
+              {results.map((result, i) => (
+                <ResultDisplay key={i} result={result} onNodeClick={handleNodeClick} />
+              ))}
+            </div>
+
+            {/* Loading indicator */}
+            {isLoading && (
+              <div className="mt-8 flex items-center justify-center gap-3 text-cinema-muted">
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:0ms]" />
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:150ms]" />
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:300ms]" />
+                <span className="font-mono text-xs">Agent düşünüyor…</span>
+              </div>
+            )}
+
+            <div ref={bottomRef} />
+          </>
+        ) : activeTab === 'compare' ? (
+          <CompareView />
+        ) : (
+          <TimelineView onFilmClick={handleFilmClick} />
         )}
-
-        {/* Sonuç listesi */}
-        <div className="space-y-8">
-          {results.map((result, i) => (
-            <ResultDisplay key={i} result={result} onNodeClick={handleNodeClick} />
-          ))}
-        </div>
-
-        {/* Loading indicator */}
-        {isLoading && (
-          <div className="mt-8 flex items-center justify-center gap-3 text-cinema-muted">
-            <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:0ms]" />
-            <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:150ms]" />
-            <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:300ms]" />
-            <span className="font-mono text-xs">Agent düşünüyor...</span>
-          </div>
-        )}
-
-        <div ref={bottomRef} />
       </main>
 
-      {/* Sticky bottom — QueryInput */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-cinema-border bg-cinema-surface/90 backdrop-blur-md">
-        <div className="mx-auto max-w-6xl px-4 py-4">
-          <QueryInput onSubmit={handleQuery} isLoading={isLoading} />
+      {/* Sticky bottom — sadece Keşfet modunda */}
+      {activeTab === 'explore' && (
+        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-cinema-border bg-cinema-surface/90 backdrop-blur-md">
+          <div className="mx-auto max-w-6xl px-4 py-4">
+            <QueryInput onSubmit={handleQuery} isLoading={isLoading} />
+          </div>
         </div>
-      </div>
+      )}
 
     </div>
   )
@@ -142,9 +162,9 @@ function WelcomeState({ stats }) {
       {/* Stat kartları */}
       {stats && (
         <div className="mx-auto mt-12 grid max-w-lg grid-cols-3 gap-4">
-          <StatCard label="Film"     value={filmCount}   color="#ff6b35" />
-          <StatCard label="Kişi"     value={personCount} color="#e8c547" />
-          <StatCard label="İlişki"   value={relCount}    color="#6b8aff" />
+          <StatCard label="Film"   value={filmCount}   color="#ff6b35" />
+          <StatCard label="Kişi"   value={personCount} color="#e8c547" />
+          <StatCard label="İlişki" value={relCount}    color="#6b8aff" />
         </div>
       )}
     </div>

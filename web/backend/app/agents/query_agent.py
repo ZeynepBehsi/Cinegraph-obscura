@@ -70,6 +70,46 @@ class CinemaQueryAgent:
             log.error("interpret_results hatası: %s", exc, exc_info=True)
             return "Sonuçlar yorumlanamadı."
 
+    async def interpret_comparison(
+        self,
+        director1: str,
+        director2: str,
+        stats1: dict,
+        stats2: dict,
+        shared_collaborators: list[dict],
+        shared_genres: list[dict],
+        shared_movements: list[str],
+        influence_paths: list[dict],
+    ) -> str:
+        """İki yönetmeni sinema tarihi bağlamında Türkçe karşılaştırır."""
+        data = {
+            "director1": {"name": director1, "stats": stats1},
+            "director2": {"name": director2, "stats": stats2},
+            "shared_collaborators_count": len(shared_collaborators),
+            "shared_collaborators_top10": shared_collaborators[:10],
+            "shared_genres": shared_genres,
+            "shared_movements": shared_movements,
+            "influence_connections": influence_paths,
+        }
+        prompt = (
+            "Sen bir sinema tarihi uzmanısın. "
+            "Aşağıdaki verileri kullanarak iki yönetmeni kapsamlı şekilde Türkçe karşılaştır.\n\n"
+            f"{json.dumps(data, ensure_ascii=False, indent=2)}\n\n"
+            "Kurallar:\n"
+            "- Markdown formatında yaz (## başlıklar, listeler kullan)\n"
+            "- Sinematografik benzerlikler ve farklılıkları vurgula\n"
+            "- Ortak çalışanlar, türler ve akımların sinema tarihi önemini belirt\n"
+            "- Etki/ilham bağlantıları varsa ayrıntılı açıkla\n"
+            "- Maksimum 5-6 bölüm, her bölüm kısa ve öz\n"
+            "- Sayısal verileri karşılaştırmalı olarak öne çıkar"
+        )
+        try:
+            response = await self.model.generate_content_async(prompt)
+            return self._safe_text(response).strip()
+        except Exception as exc:
+            log.error("interpret_comparison hatası: %s", exc, exc_info=True)
+            return "Karşılaştırma yorumlanamadı."
+
     async def fix_cypher(self, broken_cypher: str, error_msg: str) -> str:
         """Hatalı Cypher'ı hata mesajına göre düzeltir."""
         prompt = (
