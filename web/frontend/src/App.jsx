@@ -4,9 +4,11 @@ import Header from './components/Header'
 import QueryInput from './components/QueryInput'
 import ResultDisplay from './components/ResultDisplay'
 import TimelineView from './components/TimelineView'
+import { useLang } from './i18n/LanguageContext'
 import { getStats, queryAgent } from './utils/api'
 
 export default function App() {
+  const { t } = useLang()
   const [activeTab, setActiveTab] = useState('explore')
   const [stats, setStats]         = useState(null)
   const [results, setResults]     = useState([])
@@ -60,6 +62,8 @@ export default function App() {
     handleQuery(`"${film.title}" (${film.year}) filmini detaylı anlat`)
   }
 
+  const hasResults = results.length > 0 || isLoading
+
   // ── Render ─────────────────────────────────────────────────────────────────
   return (
     <div className="relative min-h-screen bg-cinema-bg font-body text-cinema-text">
@@ -79,21 +83,30 @@ export default function App() {
 
       {/* Main */}
       <main
-        className={`mx-auto max-w-6xl px-4 pt-8 ${activeTab === 'explore' ? 'pb-48' : 'pb-16'}`}
+        className={`mx-auto max-w-4xl px-4 pt-8 ${
+          activeTab === 'explore' && hasResults ? 'pb-48' : 'pb-16'
+        }`}
       >
         {activeTab === 'explore' ? (
           <>
-            {/* Welcome state */}
-            {results.length === 0 && !isLoading && (
-              <WelcomeState stats={stats} />
+            {/* ── Merkezi hero: sonuç yokken ── */}
+            {!hasResults && (
+              <div className="flex min-h-[calc(100vh-10rem)] flex-col items-center justify-center">
+                <WelcomeState stats={stats} />
+                <div className="mt-10 w-full max-w-2xl">
+                  <QueryInput onSubmit={handleQuery} isLoading={isLoading} centered />
+                </div>
+              </div>
             )}
 
-            {/* Sonuç listesi */}
-            <div className="space-y-8">
-              {results.map((result, i) => (
-                <ResultDisplay key={i} result={result} onNodeClick={handleNodeClick} />
-              ))}
-            </div>
+            {/* ── Sonuç listesi ── */}
+            {hasResults && (
+              <div className="space-y-8">
+                {results.map((result, i) => (
+                  <ResultDisplay key={i} result={result} onNodeClick={handleNodeClick} />
+                ))}
+              </div>
+            )}
 
             {/* Loading indicator */}
             {isLoading && (
@@ -101,7 +114,7 @@ export default function App() {
                 <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:0ms]" />
                 <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:150ms]" />
                 <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:300ms]" />
-                <span className="font-mono text-xs">Agent düşünüyor…</span>
+                <span className="font-mono text-xs">{t.query.agentThinking}</span>
               </div>
             )}
 
@@ -114,10 +127,10 @@ export default function App() {
         )}
       </main>
 
-      {/* Sticky bottom — sadece Keşfet modunda */}
-      {activeTab === 'explore' && (
+      {/* Sticky bottom — sonuç varsa göster */}
+      {activeTab === 'explore' && hasResults && (
         <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-cinema-border bg-cinema-surface/90 backdrop-blur-md">
-          <div className="mx-auto max-w-6xl px-4 py-4">
+          <div className="mx-auto max-w-4xl px-4 py-4">
             <QueryInput onSubmit={handleQuery} isLoading={isLoading} />
           </div>
         </div>
@@ -143,28 +156,26 @@ function StatCard({ label, value, color }) {
 }
 
 function WelcomeState({ stats }) {
+  const { t } = useLang()
   const filmCount   = stats?.nodes?.by_label?.find(r => r.label === 'Film')?.cnt
   const personCount = stats?.nodes?.by_label?.find(r => r.label === 'Person')?.cnt
   const relCount    = stats?.relationships?.total
 
   return (
-    <div className="animate-fade-in-up py-16 text-center">
-      {/* Başlık */}
+    <div className="animate-fade-in-up text-center">
       <h2 className="font-display text-5xl font-bold leading-tight text-cinema-text">
-        Sinema Evrenini{' '}
-        <span className="text-cinema-accent">Keşfet</span>
+        {t.welcome.titleLine}{' '}
+        <span className="text-cinema-accent">{t.welcome.titleAccent}</span>
       </h2>
       <p className="mx-auto mt-4 max-w-xl font-body text-base text-cinema-muted">
-        14 yönetmenin filmografisi, oyuncu kadroları, sinema akımları ve etkilenme
-        ilişkileri graph veritabanında. Türkçe veya İngilizce soru sor.
+        {t.welcome.description}
       </p>
 
-      {/* Stat kartları */}
       {stats && (
-        <div className="mx-auto mt-12 grid max-w-lg grid-cols-3 gap-4">
-          <StatCard label="Film"   value={filmCount}   color="#ff6b35" />
-          <StatCard label="Kişi"   value={personCount} color="#e8c547" />
-          <StatCard label="İlişki" value={relCount}    color="#6b8aff" />
+        <div className="mx-auto mt-8 grid max-w-lg grid-cols-3 gap-4">
+          <StatCard label={t.welcome.statFilm}     value={filmCount}   color="#ff6b35" />
+          <StatCard label={t.welcome.statPerson}   value={personCount} color="#e8c547" />
+          <StatCard label={t.welcome.statRelation} value={relCount}    color="#6b8aff" />
         </div>
       )}
     </div>

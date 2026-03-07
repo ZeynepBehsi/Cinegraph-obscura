@@ -1,13 +1,16 @@
 import { ChevronDown, ChevronUp, Code, MessageSquare, Table } from 'lucide-react'
 import { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import { useLang } from '../i18n/LanguageContext'
 import GraphVisualization from './GraphVisualization'
 
 export default function ResultDisplay({ result, onNodeClick }) {
+  const { t } = useLang()
   const [cipherOpen, setCipherOpen] = useState(false)
   const [tableOpen, setTableOpen]   = useState(false)
 
   if (!result) return null
+
 
   const { question, cypher_query, raw_results, interpretation, graph_data, error } = result
   const hasGraph = graph_data?.nodes?.length > 0
@@ -53,7 +56,7 @@ export default function ResultDisplay({ result, onNodeClick }) {
           >
             <div className="flex items-center gap-2">
               <Code size={14} className="text-cinema-accent" />
-              <span className="font-mono text-xs text-cinema-muted">Cypher Sorgusu</span>
+              <span className="font-mono text-xs text-cinema-muted">{t.result.cypherQuery}</span>
             </div>
             {cipherOpen
               ? <ChevronUp size={14} className="text-cinema-muted" />
@@ -81,10 +84,10 @@ export default function ResultDisplay({ result, onNodeClick }) {
             <div className="flex items-center gap-2">
               <Table size={14} className="text-cinema-accent" />
               <span className="font-mono text-xs text-cinema-muted">
-                Ham Veriler
+                {t.result.rawData}
               </span>
               <span className="rounded-full bg-cinema-surface px-2 py-0.5 font-mono text-[10px] text-cinema-muted">
-                {raw_results.length} satır
+                {t.result.rows(raw_results.length)}
               </span>
             </div>
             {tableOpen

@@ -1,5 +1,6 @@
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { useLang } from '../i18n/LanguageContext'
 import { getDirectorDetail, getDirectors } from '../utils/api'
 
 // ── Sabit renkler (tailwind.config ile uyumlu) ────────────────────────────────
@@ -195,6 +196,8 @@ function GenreLegend({ films }) {
 // ── Film tablosu (collapsible) ────────────────────────────────────────────────
 
 function FilmTable({ films, onFilmClick }) {
+  const { t } = useLang()
+  const tt = t.timeline
   const [open, setOpen] = useState(false)
 
   return (
@@ -204,7 +207,7 @@ function FilmTable({ films, onFilmClick }) {
         className="flex w-full items-center justify-between px-4 py-3 transition-colors hover:bg-cinema-surface"
       >
         <div className="flex items-center gap-2">
-          <span className="font-mono text-xs text-cinema-muted">Film Listesi</span>
+          <span className="font-mono text-xs text-cinema-muted">{tt.filmList}</span>
           <span className="rounded-full bg-cinema-surface px-2 py-0.5 font-mono text-[10px] text-cinema-muted">
             {films.length}
           </span>
@@ -220,7 +223,7 @@ function FilmTable({ films, onFilmClick }) {
           <table className="w-full text-left">
             <thead className="border-b border-cinema-border bg-cinema-surface">
               <tr>
-                {['Film', 'Yıl', 'Süre', 'Puan', 'Türler'].map(h => (
+                {tt.tableHeaders.map(h => (
                   <th
                     key={h}
                     className="px-4 py-2 font-mono text-[10px] uppercase tracking-wider text-cinema-muted"
@@ -240,7 +243,7 @@ function FilmTable({ films, onFilmClick }) {
                   <td className="px-4 py-2 font-body text-xs text-cinema-text">{f.title}</td>
                   <td className="px-4 py-2 font-mono text-xs text-cinema-muted">{f.year ?? '—'}</td>
                   <td className="px-4 py-2 font-mono text-xs text-cinema-muted">
-                    {f.runtime != null ? `${f.runtime} dk` : '—'}
+                    {f.runtime != null ? `${f.runtime} ${tt.runtimeSuffix}` : '—'}
                   </td>
                   <td className="px-4 py-2 font-mono text-xs" style={{ color: C.accent }}>
                     {f.rating != null ? `★ ${Number(f.rating).toFixed(1)}` : '—'}
@@ -261,6 +264,8 @@ function FilmTable({ films, onFilmClick }) {
 // ── Ana bileşen ───────────────────────────────────────────────────────────────
 
 export default function TimelineView({ onFilmClick }) {
+  const { t } = useLang()
+  const tt = t.timeline
   const [allDirectors, setAllDirectors] = useState([])
   const [selectedName, setSelectedName] = useState('')
   const [detail,       setDetail]       = useState(null)
@@ -295,7 +300,7 @@ export default function TimelineView({ onFilmClick }) {
     setHovered(null)
     getDirectorDetail(selectedName)
       .then(setDetail)
-      .catch(e => setError(e.message ?? 'Yüklenemedi.'))
+      .catch(e => setError(e.message ?? tt.loadError))
       .finally(() => setIsLoading(false))
   }, [selectedName])
 
@@ -331,17 +336,17 @@ export default function TimelineView({ onFilmClick }) {
 
         <div className="min-w-64 flex-1">
           <label className="mb-1.5 block font-mono text-[11px] uppercase tracking-wider text-cinema-muted">
-            Yönetmen
+            {tt.directorLabel}
           </label>
           <select
             value={selectedName}
             onChange={e => setSelectedName(e.target.value)}
             className="w-full rounded-lg border border-cinema-border bg-cinema-surface px-3 py-2.5 font-body text-sm text-cinema-text focus:outline-none focus:ring-1 focus:ring-cinema-accent/50"
           >
-            <option value="">— Bir yönetmen seç —</option>
+            <option value="">{tt.selectDirector}</option>
             {allDirectors.map(d => (
               <option key={d.name} value={d.name}>
-                {d.name} ({d.film_count} film)
+                {d.name} ({d.film_count} {tt.filmLabel})
               </option>
             ))}
           </select>
@@ -360,7 +365,7 @@ export default function TimelineView({ onFilmClick }) {
             )}
             {detail.influenced_by?.length > 0 && (
               <p className="font-mono text-[11px] text-cinema-muted/50">
-                Etkiler: {detail.influenced_by.slice(0, 4).join(', ')}
+                {tt.influences} {detail.influenced_by.slice(0, 4).join(', ')}
               </p>
             )}
           </div>
@@ -379,7 +384,7 @@ export default function TimelineView({ onFilmClick }) {
           <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:0ms]" />
           <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:150ms]" />
           <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-cinema-accent [animation-delay:300ms]" />
-          <span className="font-mono text-xs">Filmografi yükleniyor…</span>
+          <span className="font-mono text-xs">{tt.loading}</span>
         </div>
       )}
 
@@ -514,7 +519,7 @@ export default function TimelineView({ onFilmClick }) {
               fontFamily="'Playfair Display', Georgia, serif"
               fontWeight="bold"
             >
-              {detail?.name} — Kariyer Zaman Çizelgesi
+              {tt.careerTimeline(detail?.name)}
             </text>
 
             {/* ── Puan ölçeği notu ──────────────────────────────────── */}
@@ -526,7 +531,7 @@ export default function TimelineView({ onFilmClick }) {
               fontSize={9}
               fontFamily="'JetBrains Mono', monospace"
             >
-              ○ boyut = TMDB puanı  ·  renk = tür
+              {tt.sizeNote}
             </text>
           </svg>
 

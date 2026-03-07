@@ -2,6 +2,8 @@
 
 > A cinema analysis system that models the filmographies, casts, cinematic movements, and influence relationships of 14 master directors in a graph database — explorable via natural language queries.
 
+![Demo](images/demo.png)
+
 ---
 
 ## Table of Contents
