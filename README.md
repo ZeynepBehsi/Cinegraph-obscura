@@ -4,6 +4,9 @@
 
 ![Demo](images/demo.png)
 
+**Live Demos:**
+🔗 [Demo \[EN\]](https://claude.ai/public/artifacts/c0efd863-cb42-4ff5-bd6e-f1a55a543dff) · [Demo \[TR\]](https://claude.ai/public/artifacts/2a6cde01-efec-462f-a21f-d3c32319d9ee)
+
 ---
 
 ## Table of Contents
@@ -391,6 +394,7 @@ cd web/frontend && npm run dev
 | Interpretation | Each result is interpreted in the context of cinema history |
 | View Cypher | Inspect the generated query in a collapsible panel |
 | Raw data table | All results viewable in table format |
+| Bilingual UI | The interface is fully available in both **Turkish** and **English**; switch instantly via the TR / EN toggle in the header |
 
 ### Node Color Palette
 
@@ -407,6 +411,14 @@ cd web/frontend && npm run dev
 ### Clicking a Node
 
 Clicking any node in the graph automatically generates a new query about that node.
+
+### Screenshots
+
+![Main Page](images/webapp.png)
+
+![Compare View](images/webapp_compare.png)
+
+![Director Career Timeline](images/director_career.png)
 
 ---
 
